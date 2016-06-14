@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>查询纳税人状态</title>
+  <link href="../../lib/sui/themes/default/miniui.css" rel="stylesheet" />
+  <link href="../../lib/sui/themes/icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles/override-miniui.css">
+  <link rel="stylesheet" href="../../styles/common.css">
+  <link href="../../styles/navIndex/navIndex.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript">
+  function queryNsrzt() {
+    var nsrsbh = mini.get("nsrsbh").getValue().trim();
+    var identifyCode = mini.get("identifyCode").getValue().trim();
+    if (identifyCode.length !== 4) {
+      mini.alert("请输入4位正确的验证码!");
+      return;
+    }
+    if (nsrsbh === "") {
+      mini.alert("请输入正确的纳税人识别号");
+      return;
+    }
+    $.ajax({
+      url: "/api/sscx/queryNsrzt",
+      type: "post",
+      data: {
+        "nsrsbh": nsrsbh,
+        "identifyCode": identifyCode
+      },
+      success: function(text) {
+        var data = mini.decode(text);
+        if (!data.success) {
+          if (data.messageCode === "80480804") {
+            mini.alert("验证码错误");
+            return;
+          }
+          mini.alert("查询失败");
+          return;
+        }
+        if (data.data.length === 0) {
+          mini.alert("没有查询到数据");
+        }
+        var grid = mini.get("gridData");
+        grid.setData(data.data);
+      },
+      error: function(text) {
+        grid.unmask();
+        mini.alert("查询失败,请稍后再试!");
+      }
+    });
+  }
+  </script>
+</head>
+
+<body>
+  <div id="searchForm">
+    <div class="search" style="text-align:center">
+      <img alt="验证码" src="/captcha.jpg" onclick="this.src='/captcha.jpg?'+Math.random();"/>
+      <input id="identifyCode" name="identifyCode" class="mini-textbox" emptyText="请输入验证码" style="width:100px;" onenter="onKeyEnter" showEmptyText="true" />
+      <input id="nsrsbh" name="nsrsbh" class="mini-textbox" emptyText="请输入纳税人识别号" style="width:240px;" onenter="onKeyEnter" showEmptyText="true" />
+      <a class="btn-search" onclick="queryNsrzt()">查询</a>
+    </div>
+  </div>
+  <div id="gridData" style="width:100%" class="mini-datagrid" idField="id" showPager="false">
+    <div property="columns">
+      <div type="indexcolumn">序号</div>
+      <div field="nsrmc" width="180" headerAlign="center" align="center">
+        纳税人名称
+        <input property="editor" class="mini-textbox" />
+      </div>
+      <div field="nsrsbh" width="200" renderer="" align="center" headerAlign="center">纳税人识别号</div>
+      <div field="nsrztmc" width="70" headerAlign="center" align="center" headerAlign="center" renderer="onSwitchType">纳税人状态</div>
+    </div>
+  </div>
+  <script src="../../lib/base/jquery.min.js"></script>
+  <script src="../../lib/sui/mini-all-min.js"></script>
+</body>
+
+
+</html>

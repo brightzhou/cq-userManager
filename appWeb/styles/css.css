@@ -1,0 +1,474 @@
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+    text-shadow:none;
+}
+body {
+  font-size: 12px;
+  padding-bottom: 12px;
+  min-width: 320px;
+  font-family: "微软雅黑", Arial;
+  background: #efefef;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+ul,
+li,
+dl {
+  list-style: none;
+  list-style-type: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+}
+.clear {
+  clear: both;
+}
+.margin-top {
+  margin-top: 1em;
+}
+.p12 {
+  padding-left: 12px;
+}
+/*#region box管理*/
+.ub {
+  display: -webkit-box !important;
+  display: box !important;
+  position: relative;
+}
+.ub-rev {
+  -webkit-box-direction: reverse;
+  box-direction: reverse;
+}
+.ub-fh {
+  width: 100%;
+}
+.ub-fv {
+  height: 100%;
+}
+.ub-con {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.ub-ac {
+  -webkit-box-align: center;
+  box-align: center;
+}
+.ub-ae {
+  -webkit-box-align: end;
+  box-align: end;
+}
+.ub-pc {
+  -webkit-box-pack: center;
+  box-pack: center;
+}
+.ub-pe {
+  -webkit-box-pack: end;
+  box-pack: end;
+}
+.ub-pj {
+  -webkit-box-pack: justify;
+  box-pack: justify;
+}
+.ub-ver {
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+}
+.ub-f1 {
+  position: relative;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+}
+.ub-f2 {
+  position: relative;
+  -webkit-box-flex: 2;
+  box-flex: 2;
+}
+.ub-f3 {
+  position: relative;
+  -webkit-box-flex: 3;
+  box-flex: 3;
+}
+.ub-f4 {
+  position: relative;
+  -webkit-box-flex: 4;
+  box-flex: 4;
+}
+.ub-img {
+  -webkit-background-size: contain;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.ub-img1 {
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.ub-img2 {
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+}
+.ub-img3 {
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+}
+.ub-img4 {
+  -webkit-background-size: 100% auto;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.ub-img5 {
+  -webkit-background-size: auto 100%;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.ub-img6 {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/*#endrgion*/
+.rank {
+  padding: 1em;
+  text-align: center;
+  height: 45px;
+  margin: 0  auto;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  clear: both;
+  height: 7em;
+}
+.toptitle {
+  background: #2b98ec;
+  height: 45px;
+  text-align: center;
+  font-size: 1.5em;
+  line-height: 45px;
+  color: #fff;
+  font-family: "微软雅黑";
+  padding: 0 10px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.toptitles {
+  background: #2b98ec;
+}
+.hui {
+  color: #666666;
+}
+.green {
+  color: #7DC318;
+}
+.b {
+  color: #bbbbbb;
+}
+.number_text {
+  color: #f99537;
+  margin-top: 0.5em;
+  clear: both;
+  display: block;
+  font-size: 0.8em;
+  position: absolute;
+}
+.number_text1 {
+  color: #ced1d7;
+  margin-top: 0.5em;
+  clear: both;
+  display: block;
+  font-size: 0.8em;
+  position: absolute;
+}
+.left {
+  float: left;
+}
+.number {
+  text-align: center;
+  padding: 10px;
+  background: #f99537;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  border-radius: 100px;
+  margin: 0 auto;
+  font-size: 1.5em;
+  color: #fff;
+  font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.number1 {
+  text-align: center;
+  padding: 10px;
+  background: #ced1d7;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  border-radius: 100px;
+  margin: 0 auto;
+  font-size: 1.5em;
+  color: #fff;
+  font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.number_line {
+  height: 3px;
+  background: #f99537;
+  width: 13%;
+  margin-top: 18px;
+}
+.number_line1 {
+  height: 3px;
+  background: #ced1d7;
+  width: 13%;
+  margin-top: 18px;
+}
+.box {
+  padding: 1em;
+}
+.box_h1 {
+  color: #f07400;
+  font-size: 1em;
+  font-weight: normal;
+  padding-left: 1.5em;
+}
+.icon01 {
+  background: url(../images/ico01.png) no-repeat left center;
+  background-size: 1em;
+}
+.icon02 {
+  background: url(../images/ico02.png) no-repeat left center;
+  background-size: 1em;
+}
+.icon03 {
+  background: url(../images/ico03.png) no-repeat left center;
+  background-size: 1em;
+}
+.icon04 {
+  background: url(../images/ico04.png) no-repeat 0.5em center;
+  background-size: 1.2em;
+}
+.icon05 {
+  background: url(../images/ico05.png) no-repeat 0.5em center;
+  background-size: 1.2em;
+}
+.icon06 {
+  background: url(../images/ico06.png) no-repeat 0.5em center;
+  background-size: 1.2em;
+}
+.icon07 {
+  background: url(../images/ico07.png) no-repeat 0.5em center;
+  background-size: 1.2em;
+}
+.kele:before {
+  position: absolute;
+  content: " ";
+  border: transparent 2px solid;
+  border-width: 7px 4px ;
+  border-right-color: #fbe5bf;
+  top: 2px;
+  left: -8px;
+  height: 0;
+  width: 0;
+}
+.kele {
+  position: relative;
+  background: #fcf6ef;
+  border-radius: 5px;
+  float: left;
+  text-align: center;
+  line-height: 14px;
+  color: #f3a155;
+  font-size: 0.8em;
+  border: 1px solid #fbe5bf;
+  padding: 3px;
+  margin-left: 0.8em;
+}
+.kele:after {
+  position: absolute;
+  content: " ";
+  border: transparent 2px solid;
+  border-width: 6px 4px;
+  border-right-color: #fcf6ef;
+  top: 3px;
+  left: -7px;
+  height: 0;
+  width: 0;
+}
+.box_jbxx {
+  background: #e7e7e7;
+  font-size: 1em;
+  margin-top: 1em;
+  border: 1px solid #d1d1d1;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+.box_jbxx ul li {
+  line-height: 20px;
+  padding: 0.3em 2em;
+  border-bottom: 1px solid #d1d1d1;
+}
+.nothing {
+  border: 0px;
+}
+.box_sbnr {
+  background: #fff;
+  font-size: 1em;
+  margin-top: 1em;
+  border: 1px solid #dddddd;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+.box_sbnr ul li {
+  line-height: 20px;
+  padding: 0.5em 1em;
+  border-bottom: 1px solid #dddddd;
+  clear: both;
+}
+.button {
+  background: #2b98ec;
+  font-size: 1.2em;
+  margin-top: 1em;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  line-height: 40px;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+.line {
+  height: 10px;
+  width: 1px;
+  background: #dddddd;
+  float: left;
+}
+.input {
+  border: 0px;
+  line-height: 20px;
+  color: #0193e6;
+  margin-left: 1em;
+  width: 20%;
+}
+
+.readonlyinput {
+  border:0 none; 
+  line-height: 20px;
+  color: #000;
+  margin-left: 1em;
+  width: 20%;
+}
+
+.topicon {
+  width: 4em;
+}
+.iconback {
+  background: url(../images/arrow.png) left top no-repeat;
+  background-size: contain;
+}
+.msg-box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+.msg-box .box-1 {
+  width: 100%;
+  height: 100%;
+}
+.msg-box .box-2 {
+  margin: 0 2em;
+  border-radius: 3px;
+  border: 1px solid #EDEDED;
+  box-shadow: 0 0 6px #e4e4e4;
+}
+.msg-box .box-2 .msg-box-title {
+  background: #2B98EB;
+  font-size: 1em;
+  padding: 0.8em 1em;
+  color: #fff;
+}
+.msg-box .box-2 .msg-box-body {
+  background: #fff;
+  padding: 1em 2em;
+}
+.msg-box .box-2 .msg-box-footer {
+  background: #fff;
+  border-top: 1px solid #efefef;
+  padding: 0.5em 0;
+}
+.msg-box .box-2 .msg-box-footer .msg-box-btn {
+  padding: 0.5em 1em;
+  border-radius: 3px;
+  font-size: 1.3em;
+  margin: 0 0.5em;
+}
+.msg-box .box-2 .msg-box-footer .btn1 {
+  background: #75BCF2;
+  color: #fff;
+}
+.msg-box .box-2 .msg-box-footer .btn1:hover {
+  background: #6daad9;
+}
+.msg-box .box-2 .msg-box-footer .btn2 {
+  background: #afdafb;
+  color: #fff;
+}
+.msg-box .box-2 .msg-box-footer .btn2:hover {
+  background: #72b4e6;
+}
+.msg-box .msg-icon {
+  min-height: 2em;
+  min-width: 2em;
+  background: red;
+}
+.msg-box .content {
+  padding: 0 1em;
+}
+.msg-box .msgalert {
+  background: url(../images/tip.png) left top no-repeat;
+  background-size: contain;
+}
+.alerttip {
+  background: url(../images/tip.png) 1em 1em no-repeat;
+  background-size: 3em;
+  padding: 1em;
+  line-height: 1.5em;
+  padding-left: 5em;
+}
+.msg-box-gb {
+  background: rgba(0, 0, 0, 0.2);
+}
+/*# sourceMappingURL=css.css.map */

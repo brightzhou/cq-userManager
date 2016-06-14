@@ -1,0 +1,241 @@
+/*override miniui css*/
+
+.mini-textbox,
+.mini-buttonedit {
+  overflow: visible;
+  height: 30px;
+  line-height: 30px;
+}
+
+.mini-textbox-border,
+.mini-buttonedit-border {
+  height: 30px;
+  padding-left: 4px;
+}
+
+.mini-textbox-input,
+.mini-buttonedit-input {
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  color: #333;
+}
+
+.mini-required .mini-textbox-input,
+.mini-required .mini-buttonedit-input {
+  background: #fff;
+}
+
+.mini-buttonedit-buttons {
+  top: 6px;
+}
+
+.mini-errorIcon {
+  margin-top: 8px;
+}
+
+.mini-grid td {
+  height: 30px;
+}
+
+.mini-button {
+  height: 27px;
+  width: 60px;
+  line-height: 27px;
+}
+
+.mini-button-text {
+  line-height: 20px;
+}
+
+.mini-radiobuttonlist label {
+  font-family: "微软雅黑";
+}
+
+.mini-layout-region {
+  border: 0 solid #fff;
+}
+
+.mini-outlookbar-groupHeader {
+  background: #e2e5e8;
+  height: 40px;
+  line-height: 40px;
+}
+
+.mini-outlookbar-groupTitle {
+  line-height: 40px;
+  font-size: 14px;
+}
+
+.mini-menuitem {
+  height: 35px;
+  line-height: 35px;
+}
+
+.mini-menuitem-hover {
+  border: 1px solid #f4f5f7;
+  background: #f4f5f7;
+}
+
+.mini-menuitem-text {
+  font-size: 13px;
+}
+
+.mini-menuitem-selected {
+  border: 1px solid #1859A8;
+  background: #1859A8;
+  color: #fff;
+}
+
+.mini-menuitem-inner {
+  padding-left: 32px;
+}
+
+.mini-menuitem-text {
+  color: inherit;
+}
+
+.mini-outlookbar .mini-outlookbar-icon {
+  margin-top: 9px;
+  width: 24px;
+  height: 20px;
+}
+
+.mini-layout,
+.mini-outlookbar,
+.mini-menu,
+.mini-grid-cell,
+.mini-grid-headerCell,
+.mini-grid-filterCell,
+.mini-grid-summaryCell,
+.mini-button,
+.mini-buttonedit-input,
+.mini-listbox td,
+.mini-textbox-input,
+.mini-htmlfile .mini-buttonedit-button {
+  font-family: "微软雅黑";
+}
+
+.mini-outlookbar-groupHeader {
+  background: #E8EDF3;
+}
+
+.mini-tools span {
+  margin-right: 10px;
+}
+
+.mini-grid-headerCell {
+  background: #F6F6F6;
+  border-right: #d2d2d2 solid 1px;
+  border-bottom: #d2d2d2 solid 1px;
+}
+
+.mini-grid-border{
+  border-left: 1px solid #d2d2d2;
+  border-top:1px solid #d2d2d2;
+  border-bottom: 0;
+  border-right: 0;
+}
+
+.mini-grid-table {
+  border-collapse: collapse;
+}
+
+.mini-error .mini-textbox-border {
+  border-color: #DE2A2A;
+}
+
+.mini-panel{
+  font-family: "微软雅黑";
+}
+
+.mini-outlookbar-group{
+  border-bottom: 1px solid #dadada;
+}
+
+.mini-panel-border{
+  border:1px solid #d2d2d2;
+}
+
+.mini-window .mini-panel-header{
+  background: #F6F6F6;
+}
+
+.mini-panel-header{
+  border-bottom: 0;
+  height: 30px;
+  line-height: 28px;
+}
+
+.mini-panel .mini-panel-title{
+  line-height: 24px;
+}
+
+.mini-panel-body{
+  text-align: center;
+}
+
+.mini-htmlfile .mini-buttonedit-button{
+  border:0;
+  background: #ececec;
+  height: 30px;
+  line-height: 30px;
+  margin-top: -6px;
+  margin-right: 0;
+  color: #333;
+  font-size: 13px;
+}
+
+body a.mini-button-disabled{
+  border:0;
+}
+
+/*mini button comfirm messageBox*/
+.mini-messagebox-question{
+  background: 0;
+}
+
+.mini-button{
+  background: #37bcf7;
+  border:0;
+  border-radius: 4px;
+  width: 80px !important;
+}
+
+.mini-button, a.mini-button{
+  color: #fff;
+}
+
+body a:hover.mini-button{
+  border:0;
+  background: #1aacda;
+}
+
+.mini-panel-viewport{
+  height: 130px;
+}
+
+.mini-panel{
+  width: 340px;
+}
+
+.mini-messagebox-warning{
+  background: 0;
+}
+
+.mini-outlookbar-groupBody{
+  border: 0;
+}
+
+.mini-menu-inner{
+  padding:0;
+}
+
+body .mini-button-pressed,
+body a:hover.mini-button-pressed {
+  border: 0;
+  padding: 0;
+  color: #fff;
+  background: #1aacda;
+  cursor: pointer;
+}

@@ -1,0 +1,25 @@
+[
+  { id: "right", menuName: "办税服务", iconCls: "cq-icon-100" },
+  { pid: "right", menuName: "一般纳税人申报", url: "/PortalWeb/pages/nav/navIndex.html"},
+  { pid: "right", menuName: "办税服务", url: "/PortalWeb/pages/handleTaxService/checkTaxService.html" },
+  { pid: "right", menuName: "查询服务", url: "/PortalWeb/pages/handleTaxService/interactionService.html" },
+  { pid: "right", menuName: "咨询互动", url: "/PortalWeb/pages/handleTaxService/searchService.html" },
+
+  { id: "user", menuName: "用户管理", iconCls: "cq-icon-200" },
+  { pid: "user", menuName: "绑定企业", url: "/PortalWeb/pages/corporateBind/corporateBind.html" },
+  { pid: "user", menuName: "个人信息维护", url: "/PortalWeb/pages/taxpayerInfoMaintain/userInfoMaintain.html" },
+  { pid: "user", menuName: "纳税人信息维护", url: "/PortalWeb/pages/taxpayerInfoMaintain/taxpayerInfoMaintain.html" },
+  { pid: "user", menuName: "代理人添加", url: "/PortalWeb/pages/addAgency/addAgent.html" },
+  { pid: "user", menuName: "代理机构绑定", url: "/PortalWeb/pages/addAgency/agencyBind.html" },
+  { pid: "user", menuName: "选择被代理纳税人", url: "/PortalWeb/pages/addAgency/choiceAgent.html" },
+  { pid: "user", menuName: "修改密码", url: "/PortalWeb/pages/modifyPassword/modifyPassword.html" },
+  { pid: "user", menuName: "办税人员管理", url: "/PortalWeb/pages/addAgency/taxpayerManager.html" },
+
+  { id: "three", menuName: "宣传指导", iconCls: "cq-icon-300" },
+  { pid: "three", menuName: "菜单三", url: "" },
+  { pid: "three", menuName: "菜单三", url: "" },
+
+  { id: "four", menuName: "权益维护", iconCls: "cq-icon-400" },
+  { pid: "four", menuName: "菜单四", url: "" },
+  { pid: "four", menuName: "菜单四", url: "" }
+]

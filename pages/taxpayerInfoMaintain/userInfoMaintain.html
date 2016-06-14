@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>个人信息维护</title>
+  <link href="../../lib/sui/themes/default/miniui.css" rel="stylesheet" />
+  <link href="../../lib/sui/themes/icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles/override-miniui.css">
+  <link rel="stylesheet" href="../../styles/common.css">
+  <link rel="stylesheet" href="../../styles/taxpayerInfoMaintain/userInfoMaintain.css">
+  
+</head>
+
+<body>
+  <div id="userInfoMaintain">
+    <img class="bg-right" src="../../images/taxpayerInfoMaintain.png" alt="">
+    <div class="userInfoMaintain-title">
+      <h3>个人信息维护</h3>
+    </div>
+    <div id="userInfoMaintainForm" class="userInfoMaintain-form">
+    <input id="accountId" name="accountId" class="mini-hidden" readOnly="true" style="width: 240px;"/>
+      <table>
+        <tr>
+          <td width="70">用户名</td>
+          <td>
+            <input id="username" name="username" class="mini-textbox" readOnly="true" style="width: 240px;"/>
+          </td>
+        </tr>
+        <tr>
+          <td>姓名</td>
+          <td>
+          <input id="xm" name="xm" class="mini-textbox" readOnly="true" style="width: 240px;"/>
+          </td>
+        </tr>
+        <tr>
+          <td>身份证号</td>
+          <td>
+          <input id="sfzhm" name="sfzhm" class="mini-textbox" readOnly="true" style="width: 240px;"/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+           	 性别
+          </td>
+          <td>
+            <input name="sex" id="sex" class="mini-radiobuttonlist" repeatDirection="" repeatLayout="table" data="[{id:'m',text:'男'},{id:'f',text:'女'}]" valueField="id" value="m"></input>
+          </td>
+        </tr>
+        <tr>
+          <td>手机号码</td>
+          <td>
+            <input id="mobile" name="mobile" class="mini-textbox" vtype="required;telNum" style="width: 240px;" onvalidation="telNumberValidation"/>
+            <i>*<i>
+          </td>
+          <td id="mobile_error" class="validation-error-text"></td>
+        </tr>
+        <tr>
+          <td>银行卡号</td>
+          <td> <input id="yhkh" name="yhkh" class="mini-textbox" vtype="bankNum;required" onvalidation="bankNumValidation" style="width: 240px;"/>
+          <i>*<i>
+          </td>
+          <td id="yhkh_error" class="validation-error-text"></td>
+        </tr>
+        <tr>
+          <td>邮箱地址</td>
+          <td>
+            <input id="email" name="email" class="mini-textbox" vtype="email;maxLength:30" style="width: 240px;" onvalidation="emailValidation"/>
+          </td>
+          <td id="email_error" class="validation-error-text"></td>
+        </tr>
+          <td>微信号</td>
+          <td>
+            <input id="wxzh" name="wxzh" class="mini-textbox" style="width: 240px;" onvalidation="wechatNumValidation" vtype="maxLength:32"/>
+          </td>
+          <td id="wxzh_error" class="validation-error-text"></td>
+        </tr>
+        <tr>
+          <td>地址</td>
+          <td style="padding-top:3px;"> <input id="address1"  class="mini-textarea" vtype="maxLength:150" onvalidation="addressValidation" style="width: 240px;" errorMode="border"/>
+          </td>
+          <td id="address1_error" class="validation-error-text"><span style="color:#666;margin-left:-20px;">（此为默认地址）</span></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="padding:6px 0"> <input id="address2" class="mini-textarea" vtype="maxLength:150" onvalidation="addressValidation" style="width: 240px;"/>
+          </td>
+          <td id="address2_error" class="validation-error-text"></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td> <input id="address3" class="mini-textarea" vtype="maxLength:150" onvalidation="addressValidation" style="width: 240px;"/>
+          </td>
+          <td id="address3_error" class="validation-error-text"></td>
+        </tr>
+        <tr>
+          <td>
+            是否代理人
+          </td>
+          <td>
+            <input name="sfdlr" class="mini-radiobuttonlist" readonly="readonly" repeatDirection="" repeatLayout="table" url="../../data/agency.json" textField="text" valueField="id" value="0"></input>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input id="infoMaintainConfirm" value="确  定" class="btn-blue" type="button"/>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+  <script src="../../lib/base/jquery.min.js"></script>
+  <script src="../../lib/sui/mini-all-min.js"></script>
+  <script src="../../scripts/commonjs/validate.js"></script>
+  <script src="../../scripts/pagejs/taxpayerInfoMaintain/userInfoMaintain.js"></script>
+  <script type="text/javascript"
+		src="/PortalWeb/scripts/pagejs/global/global.js"></script>
+</html>

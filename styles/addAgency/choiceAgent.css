@@ -1,0 +1,64 @@
+#choiceAgent {
+  width: 900px;
+  position: relative;
+  padding: 10px 0 0 25px;
+}
+
+.choice-agent-title {
+  border-bottom: 1px dashed #ccc;
+  padding: 10px 0;
+}
+
+.handle-choice-agent{
+  overflow: hidden;
+  zoom:1;
+}
+
+.handle-choice-agent .search{
+  float: right;
+}
+
+.handle-choice-agent .search a.btn-search{
+  padding-left: 24px;
+  font-size: 14px;
+  padding-right: 10px;
+}
+
+.search img{
+  vertical-align: middle;
+  height: 30px;
+}
+
+.handle-choice-agent {
+  margin-top: 6px;
+}
+
+#choiceAgent .agent-title,
+#choiceAgency {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #6c6c6c;
+}
+
+#choiceAgentForm {
+  margin-top: 6px;
+}
+
+#agentData {
+  width: 900px !important;
+  height: auto !important;
+}
+
+.cancel-agent-button{
+  color: #1aacda;
+  text-decoration: underline;
+}
+
+.cancel-agent-button:hover{
+  color: #37bcf7;
+  text-decoration: underline;
+}
+
+.mini-textbox-border{
+  border: 1px solid #ccc;
+}

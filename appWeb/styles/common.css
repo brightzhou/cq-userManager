@@ -1,0 +1,91 @@
+@charset "utf-8";
+/*global*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,p,blockquote,th,td,article,textarea{margin:0;padding:0}
+body{font-size:14px;color:#333;font-family:"微软雅黑", Arial;}
+table{border-collapse:collapse;border-spacing:0;}
+ul,li,dl{list-style:none;list-style-type:none;}
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+a{text-decoration:none; color:#333}
+a:hover{text-decoration:none;}
+input:focus{outline:none;}
+a:focus{outline:none;}
+img{border:none;vertical-align: middle;}
+i{font-style:normal;}
+input,select,textarea,button{vertical-align:middle;font-size:100%;outline:none;font-family:"微软雅黑", Arial;}
+h1 {
+  font-size: 24px; }
+
+h2 {
+  font-size: 20px; }
+
+h3 {
+  font-size: 16px; }
+
+/**按钮:蓝底白字**/
+.btn-blue {
+  color: #fff;
+  line-height: 30px;
+  text-decoration: none;
+  background: #37bcf7;
+  /*padding: 0px 15px;*/
+  /*margin: 0px 5px;*/
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  font-weight: bolder;
+  border-radius: 4px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;}
+  .btn-blue:visited {
+    color: #fff;
+    background: #37bcf7;
+    text-decoration: none; }
+  .btn-blue:hover {
+    color: #fff;
+    background: #1aacda;
+    text-decoration: none; }
+  .btn-blue:active {
+    color: #fff;
+    background: #14a2cf;
+    text-decoration: none; }
+
+/*验证不通过显示文本*/
+.validation-error-text{
+  color: #DE2A2A;
+}
+
+/**图标按钮:查询**/
+.btn-search {
+  cursor: pointer;
+  width: 28px;
+  height: 30px;
+  line-height: 28px;
+  border: 1px solid #ccc;
+  /*border-left: 0;*/
+  /*margin-left: -4px;*/
+  background: url("../images/icon_search.png") 4px center no-repeat;
+  display: inline-block;
+  text-decoration: none;
+  vertical-align: top; }
+
+/*必填*/
+i{
+  color: red;
+  font-size: 14px;
+  vertical-align: bottom;
+  padding:0 4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>选择被代理纳税人</title>
+  <link href="../../lib/sui/themes/default/miniui.css" rel="stylesheet" />
+  <link href="../../lib/sui/themes/icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles/override-miniui.css">
+  <link rel="stylesheet" href="../../styles/common.css">
+  <link rel="stylesheet" href="../../styles/addAgency/choiceAgent.css">
+</head>
+
+<body>
+  <div id="choiceAgent">
+    <div class="choice-agent-title">
+      <h3>选择被代理纳税人</h3>
+    </div>
+    <div class="handle-choice-agent">
+      <div class="search">
+        <input id="taxpayerIdentifyNum" class="mini-textbox" emptyText="请输入税号" style="width:240px;" onenter="onKeyEnter" showEmptyText="true"/>
+        <a class="btn-search" onclick="research()">查询</a>
+      </div>
+    </div>
+    <div id="choiceAgentForm" class="choice-agent-form">
+      <div id="agentData" class="mini-datagrid" url="/api/yhgl/listAllCompany" idField="id" showPager="false">
+        <div property="columns">
+          <div type="indexcolumn"></div>
+          <div field="nsrmc" width="180" headerAlign="center" align="center">纳税人名称
+            <input property="editor" class="mini-textbox" />
+          </div>
+          <div field="nsrsbh" width="200" renderer="" align="center" headerAlign="center">纳税人识别号
+          </div>
+         <!--  <div field="taxpayer" width="150" renderer="" align="center" headerAlign="center">纳税人
+          </div> -->
+          <div field="dlzt"  width="70" headerAlign="center" align="center" headerAlign="center" renderer="onSwitchType">状态
+          </div>
+          <div field="action" name="action" width="100" headerAlign="center" align="center" renderer="onActionRenderer" cellStyle="padding:0;">操作
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../../lib/base/jquery.min.js"></script>
+  <script src="../../lib/sui/mini-all-min.js"></script>
+  <script src="../../scripts/pagejs/addAgency/choiceAgent.js"></script>
+  <script type="text/javascript"
+		src="/PortalWeb/scripts/pagejs/global/global.js"></script>
+</body>
+</html>

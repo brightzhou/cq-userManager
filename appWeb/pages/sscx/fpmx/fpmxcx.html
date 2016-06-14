@@ -1,0 +1,265 @@
+<!doctype html>
+<html>
+<head>
+  <title>发票明细页面</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  body {
+    font: normal 14px/2 '微软雅黑';
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-style: normal
+  }
+  
+  .title {
+    padding-left: 10px;
+    color: #ffffff;
+    background-color: #35BEF4;
+    text-align: center;
+  }
+  
+  li {
+    margin-top: 15px;
+    margin-left: 10px;
+  }
+  
+  input {
+    float: right;
+    margin-right: 20px;
+    width: 58%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    padding-left: 4px;
+    font-family: "微软雅黑";
+  }
+  
+  .action-verifycode .form-label {
+    float: left;
+  }
+  
+  .verify-input,
+  .verify-img {
+    width: 28%;
+  }
+  
+  .verify-input {
+    margin-top: 1px;
+    margin-right: 5px;
+  }
+  
+  .verify-img {
+    float: right;
+    margin-right: 20px;
+    height: 30px;
+    vertical-align: middle;
+  }
+  
+  .button-center {
+    margin: 20px 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  button {
+    font-family: "微软雅黑";
+    width: 200px;
+    height: 30px;
+    border: 0px;
+    border-radius: 7px;
+    color: #ffffff;
+    background-color: #FD860E;
+  }
+  
+  .info {
+    width: 95%;
+    margin-left: 10px;
+  }
+  
+  .info p {
+    word-break: break-all;
+  }
+  </style>
+</head>
+<body>
+<div class="content">
+    <h2 class="title">发票明细查询</h2>
+    <form action="/searchPage.html" method="get" id="numberForm">
+        <ul>
+            <li class="form-item invoice-code">
+                <label class="form-label">发票代码：</label>
+                        <span class="form-act">
+                            <input class="code-check" type="text" name="fpdm" id="fpdm"
+                                   value="" placeholder="发票代码" vtype="required" autofocus="autofocus" />
+                        </span>
+            </li>
+            <li class="form-item invoice-number">
+                <label class="form-label">发票号码：</label>
+                        <span class="form-act">
+                            <input class="number-check" type="text" name="fphm" id="fphm"
+                                   value="" placeholder="发票号码" vtype="required" />
+                        </span>
+            </li>
+            <li class="form-item payer-name">
+                <label class="form-label">付款方名称：</label>
+                        <span class="form-act">
+                            <input class="name-check" type="text" name="fkfmc" id="fkfmc"
+                                   value="" placeholder="付款方名称" vtype="required" />
+                        </span>
+            </li>
+            <li class="form-item invoice-money">
+                <label class="form-label">开票金额：</label>
+                        <span class="form-act">
+                            <input id="kpje" class="money-check" type="text" name="kpje"
+                                   value="" placeholder="开票金额" vtype="required" />
+                        </span>
+            </li>
+            <li class="form-item action-verifycode" style="overflow:hidden;zoom:1">
+                <label class="form-label">验证码：</label>
+                    <span class="form-act">
+                        <img class="verify-img" src="/captcha.jpg" onclick="this.src='/captcha.jpg?'+Math.random();" alt="验证码" title="点击更换验证码">
+                        <input id="codeImg"  id="code" class="verify-input" type="text" name="code"
+                           placeholder="填写验证码" maxlength="4" autocomplete="off"/>
+                    </span>
+            </li>
+        </ul>
+    </form>
+    <div class="button-center">
+    <button type="button" onclick="doQuery();" form="numberForm" value="Submit">查询</button>
+    </div>
+    <div class="info">
+        <h4>查询结果</h4>
+        <p >购方纳税人识别号：<span id="gfnsrsbh"></span></p>
+        <p >购方纳税人名称：<span id="gfnsrmc"></span></p>
+        <p >销方纳税人识别号：<span id="xfnsrsbh"></span></p>
+        <p >销纳税人名称：<span id="xfnsrmc"></span></p>
+        <p >开票日期：<span id="kprq"></span></p>
+        <p >开具状态：<span id="kjqk"></span></p>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+
+function validate(){
+	var fkfmc = $("#fkfmc").val();
+	var fpdm = $("#fpdm").val();
+	var fphm = $("#fphm").val();
+	var kpje = $("#kpje").val();
+	var code = $("#code").val();
+	if(fkfmc == ""){
+		alert("请输入付款方名称!");
+		return false;
+	}
+	if(fpdm == ""){
+		alert("请输入发票代码!");
+		return false;
+	}
+	if(fphm == ""){
+		alert("请输入发票号码!");
+		return false;
+	}
+	if(kpje == ""){
+		alert("请输入开票金额");
+		return false;
+	}
+	if(code ==""){
+		alert("请输入验证码!");
+		return false;
+	}
+	var re = new RegExp("^[\u4e00-\u9fa5]+$");
+	if (re.test(fkfmc)) {
+	    if(v.length > 42){
+	    	alert("付款方请输入少于42个汉字");
+	     	return false;
+	    }
+	}
+	var reg1 = /^\d{8,12}$/;
+	if(!reg1.test(fpdm)){
+		alert("发票代码请输入8-12位数字");
+		return false;
+	}
+	var reg2 = /^\d{8}$/;
+	if(!reg2.test(fphm)){
+		alert("发票号码请输入8位数字");
+		return false;
+	}
+	var reg3 = /^[0-9]+([.]{1}[0-9]+){0,1}$/;
+	if(!reg3.test(kpje)){
+		alert("开票金额只能输入小数或整数!");
+		return false;
+	}
+	var reg4 = /^\d{4}$/;
+	var b2 = reg4.test(code);
+	if(!b2){
+		alert("请输入四位数字验证码!");
+		return false;
+	}
+	return true;
+};
+var doQuery = function(){
+		if(!validate()){
+			return ;
+		}
+		var fkfmc = $("#fkfmc").val();
+		var fpdm = $("#fpdm").val();
+		var fphm = $("#fphm").val();
+		var kpje = $("#kpje").val();
+		var code = $("#code").val();
+		var json = "{'fkfmc':'"+fkfmc+"' , 'fpdm':'"+fpdm+"' ,'fphm':'"+fphm+"' ,'kpje':'"+kpje+"' ,'code':'"+code+"'}";
+		$.ajax({
+		    url: "/api/sscx/fpmx",
+		    type: "post",
+		    data: { "jsonStr": json },
+		    success: function (text) {
+		        var result = text;
+		        if(result.success){
+		        	var value = result.data[0];
+		        	/*
+		<p>购方纳税人识别号：<p id="gfnsrsbh"></p></p>
+        <p>购方纳税人名称：<p id="gfnsrsbh"></p></p>
+        <p>销方纳税人识别号：<p id="xfnsrsbh"></p></p>
+        <p>销纳税人名称：<p id="xfnsrmc"></p></p>
+        <p>开票日期：<p id="kprq"></p></p>
+		        	*/
+		        	var gfnsrsbh = value["gfnsrsbh"];
+		        	var gfnsrmc = value["gfnsrmc"];
+		        	var xfnsrsbh = value["xfnsrsbh"];
+		        	var xfnsrmc = value["xfnsrmc"];
+		        	var kprq = value["kprq"];
+        			var state = value["kjqk"];
+        			$("#gfnsrsbh").html(gfnsrsbh);
+        			$("#kprq").html(kprq);
+        			$("#gfnsrmc").html(gfnsrmc);
+        			$("#xfnsrsbh").html(xfnsrsbh);
+        			$("#xfnsrmc").html(xfnsrmc);
+        			var val = "";
+        			if(state == "0"){
+        				val = "正常开具";
+        			}else if(state == "1"){
+        				val = "红字发票";
+        			}else if(state == "2"){
+        				val = "作废发票";
+        			}else{
+        				val = "其它";
+        			}
+        			$("#kjqk").html(val);
+		        }else{
+		        	//alert(result.message);
+		        	alert(result.paramList[0]);
+		        }
+		        $("#codeImg").attr("src" ,"/captcha.jpg?"+Math.random());
+
+		    }
+		});
+};
+</script>
+<script src="../../../../lib/base/jquery.min.js"></script>
+
+</body>
+</html>

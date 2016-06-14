@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>纳税人信息维护</title>
+  <link href="../../lib/sui/themes/default/miniui.css" rel="stylesheet" />
+  <link href="../../lib/sui/themes/icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles/override-miniui.css">
+  <link rel="stylesheet" href="../../styles/common.css">
+  <link rel="stylesheet" href="../../styles/taxpayerInfoMaintain/taxpayerInfoMaintain.css">
+</head>
+
+<body>
+  <div id="taxpayerInfoMaintain">
+    <img class="bg-right" src="../../images/taxpayerInfoMaintain.png" alt="">
+    <div class="taxpayerInfoMaintain-title">
+      <h3>纳税人信息维护</h3>
+    </div>
+    <div id="taxpayerInfoMaintainForm" class="taxpayerInfoMaintain-form">
+      <table>
+        <tr>
+          <td width="120">纳税人识别号</td>
+          <td><input id="nsrsbhGs" name="nsrsbhGs" class="mini-textbox" readOnly="true" allowInput="false" style="width: 240px;"/></td>
+        </tr>
+        <tr>
+          <td>纳税人名称</td>
+          <td><input id="gsNsrmc" name="gsNsrmc" class="mini-textbox" readOnly="true" allowInput="false" style="width: 240px;"/></td>
+        </tr>
+        <tr>
+          <td>法人代表姓名</td>
+          <td><input id="fddbrxm" name="fddbrxm" class="mini-textbox" readOnly="true" allowInput="false" style="width: 240px;"/></td>
+        </tr>
+        <tr>
+          <td>法人代表身份证</td>
+          <td><input id="fddbrxmzjhm" name="fddbrxmzjhm" class="mini-textbox" readOnly="true" allowInput="false" style="width: 240px;"/></td>
+        </tr>
+        <tr>
+          <td>法人代表手机</td>
+          <td><input id="fddbrxmyddh" name="fddbrxmyddh" class="mini-textbox" readOnly="true" allowInput="false" style="width: 240px;"/></td>
+        </tr>
+        <tr>
+          <td>注册地址</td>
+          <td>
+            <input id="zcdz" name="zcdz" class="mini-textbox" vtype="maxLength:128;isChinese42" style="width: 240px;" onvalidation="registerAddressValidation"/>
+          </td>
+          <td id="zcdz_error" class="validation-error-text"></td>
+        </tr>
+        <tr>
+          <td>经营地址</td>
+          <td>
+            <input id="scjydz" name="scjydz" class="mini-textbox" vtype="maxLength:128;isChinese42" style="width: 240px;" onvalidation="registerAddressValidation"/>
+          </td>
+          <td id="scjydz_error" class="validation-error-text"></td>
+        </tr>
+        <tr>
+          <td>注册资本（万元）</td>
+          <td>
+            <input id="zczb" name="zczb" class="mini-textbox" vtype="double16;largerThan0" style="width: 240px;" onvalidation="registerCapitalValidation"/>
+          </td>
+          <td id="zczb_error" class="validation-error-text"></td>
+        </tr>
+        <tr>
+          <td>经营范围</td>
+          <td>
+            <input id="jyfw" name="jyfw" class="mini-textbox" vtype="maxLength:1024;isChinese340" style="width: 240px;" onvalidation="busniessScopeValidation"/>
+          </td>
+          <td id="jyfw_error" class="validation-error-text"></td>
+        </tr>
+        <tr>
+          <td>地税纳税人识别号</td>
+          <td>
+            <input id="nsrsbhDs" name="nsrsbhDs" class="mini-textbox" vtype="maxLength:20;" onvalidation="englishAndNumValidation" style="width: 240px;" />
+          </td>
+          <td id="nsrsbhDs_error" class="validation-error-text"></td>
+        </tr>
+        <tr>
+          <td>
+            是否代理机构
+          </td>
+          <td>
+            <input name="isDljg" class="mini-radiobuttonlist" repeatLayout="table" url="../../data/agency.json" textField="text" valueField="id" value="0"></input>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input id="infoMaintainConfirm" value="确  定" class="btn-blue" type="button" />
+          </td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script src="../../lib/base/jquery.min.js"></script>
+  <script src="../../lib/sui/mini-all-min.js"></script>
+  <script src="../../scripts/commonjs/validate.js"></script>
+  <script src="../../scripts/pagejs/taxpayerInfoMaintain/taxpayerInfoMaintain.js"></script>
+  <script type="text/javascript"
+		src="/PortalWeb/scripts/pagejs/global/global.js"></script>
+</body>
+
+</html>

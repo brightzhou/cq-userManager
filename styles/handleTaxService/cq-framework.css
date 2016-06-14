@@ -1,0 +1,260 @@
+.body-wrap{
+  width: 100%;
+}
+
+.header {
+  background-color: #6da3f1;
+  height: 84px;
+  width: 100%;
+  background-size: cover;
+}
+
+.header h2 {
+  height: 84px;
+  line-height: 84px;
+  color: #fff;
+  padding-left: 70px;
+  background: url(../../images/service/emblem-icon.png) no-repeat 10px center;
+}
+
+.header .user-info ul li{
+  display: inline-block;
+  color: #fff;
+  font-size: 14px;
+  padding: 0 10px;
+}
+
+.header .user-info .sx {
+  width: 16px;
+  height: 16px;
+  background: url(../../images/service/sx.png) no-repeat center center;
+}
+
+.header .user-info .sx:hover {
+  cursor: pointer;
+  background: url(../../images/service/sx-on.png) no-repeat center center;
+  animation: rotateAnimation 5s infinite;
+  -webkit-animation: rotateAnimation 5s infinite;
+}
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+  }
+}
+
+@-webkit-keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+  }
+}
+
+.header .user-info .app-center {
+  display: inline-block;
+  width: 80px;
+  text-align: right;
+  background-image: url(../../images/service/yyzx.png);
+  background-repeat: no-repeat;
+  background-size: 22px 22px;
+  background-position: 0 center;
+}
+
+.header .user-info .app-center:hover {
+  background-image: url(../../images/service/yyzx-on.png);
+  background-repeat: no-repeat;
+  background-size: 22px 22px;
+  background-position: 0 center;
+  color: #FD0;
+}
+
+.header .user-info ul li a{
+  color: #fff;
+}
+
+.header .user-info .sx{
+  cursor: pointer;
+}
+
+.header .user-info ul li a img{
+  padding-right: 4px;
+}
+
+.header .user-info ul{
+  padding-right: 30px;
+  height: 84px;
+  line-height: 84px;
+}
+
+.content{
+  overflow: hidden;
+}
+
+.content-box{
+  width: 80%;
+  height: 540px;
+}
+
+.menu-list{
+  width: 20%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.menu-list .tax-area{
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  background: rgb(64, 121, 191) url("../../images/service/down.png") no-repeat 210px center;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+}
+
+.menu-list ul li{
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-bottom: 1px solid #efefef;
+}
+
+.menu-list .tax-service{
+  background: url(../../images/service/taxService.png) no-repeat 40px center;
+}
+
+.menu-list .tax-service:hover,
+.menu-list .tax-service.front-icon{
+  background: url(../../images/service/taxService-on.png) no-repeat 40px center;
+}
+
+.menu-list .my-app{
+  background: url(../../images/service/my-app.png) no-repeat 40px center;
+}
+
+.menu-list .my-app:hover,
+.menu-list .my-app.front-icon{
+  background: url(../../images/service/my-app-on.png) no-repeat 40px center;
+}
+
+.menu-list .search-service{
+  background: url(../../images/service/search.png) no-repeat 40px center;
+}
+
+.menu-list .search-service:hover,
+.menu-list .search-service.front-icon{
+  background: url(../../images/service/search-on.png) no-repeat 40px center;
+}
+
+.menu-list .interaction{
+  background: url(../../images/service/interaction.png) no-repeat 40px center;
+}
+
+.menu-list .interaction:hover,
+.menu-list .interaction.front-icon{
+  background: url(../../images/service/interaction-on.png) no-repeat 40px center;
+}
+
+.menu-list ul li a{
+  font-size: 15px;
+  display: block;
+}
+
+.menuChangeStyle {
+  background-color: #e8f2ff !important;
+  color: #4a89dc;
+}
+
+.menuChangeStyle:focus{
+  background: url(../../images/service/taxService-on.png) no-repeat 40px center;
+}
+
+.menu-list ul li a:hover,
+.menu-list .color-bg {
+  color: #4a89dc;
+  background-color: #e8f2ff !important;
+}
+
+.menu-list .border {
+  border: 1px solid #efefef;
+}
+
+.space-tax{
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  background: #e5e8f1 url("../../images/service/right.png") no-repeat 210px center;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 276px;
+}
+
+.close-body {
+  width: 120px;
+  position: absolute;
+  right: 0;
+  font-size: 0.9em;
+  line-height: 3em;
+  text-align: center;
+}
+
+.body-sx {
+  width: 40px;
+  height: 30px;
+  background-image: url('../../images/sx.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.body-sx:hover {
+  background-color: #E5E5E5;
+  background-image: url('../../images/sx-icon.png');
+}
+
+.body-fd {
+  width: 40px;
+  height: 30px;
+  background-image: url('../../images/windows.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 46% 46%;
+}
+
+.body-fd:hover {
+  background-color: #E5E5E5;
+  background-image: url('../../images/windows-icon.png');
+}
+
+.body-close {
+  width: 40px;
+  height: 30px;
+  background-image: url('../../images/gb.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.body-close:hover {
+  background-color: #E5E5E5;
+  background-image: url('../../images/gb-icon.png');
+}

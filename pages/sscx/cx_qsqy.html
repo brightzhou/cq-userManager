@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>欠税企业查询</title>
+  <link href="../../lib/sui/themes/default/miniui.css" rel="stylesheet" />
+  <link href="../../lib/sui/themes/icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles/override-miniui.css">
+  <link rel="stylesheet" href="../../styles/common.css">
+  <link href="../../styles/navIndex/navIndex.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <table id="searchForm">
+    <tbody>
+      <tr>
+        <th>纳税人识别号:</th>
+        <td>
+          <input class="mini-textbox" name="nsrsbh" errorMode="border" width="240" />
+        </td>
+        <th>随机码:</th>
+        <td>
+          <input class="mini-textbox" id="" name="" errorMode="border" width="100" />
+        </td>
+        <td>
+          <a class="btn-search" onclick="doQuery()">查询</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div id="gridData" style="width:100%" class="mini-datagrid" idField="nsrsbh" showPager="false" emptyText='<font color="red" style="float: right;padding-right: 2%;">无记录</font>' url="../../data/cx_fplx.json">
+    <div property="columns">
+      <div type="indexcolumn" headerAlign="center" align="center">序号</div>
+      <div field="nsrsbh" headerAlign="center" align="center">纳税人识别号
+      </div>
+      <div field="nsrmc" headerAlign="center" align="center">纳税人名称
+      </div>
+      <div field="qfzt" headerAlign="center" align="center"  renderer="onRenderer">是否欠税
+      </div>
+    </div>
+  </div>
+  <script src="../../lib/base/jquery.min.js"></script>
+  <script src="../../lib/sui/mini-all-min.js"></script>
+  <script src="../../scripts/pagejs/sscx/cx_qsqy.js"></script>
+</body>
+
+</html>

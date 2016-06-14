@@ -1,0 +1,271 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>重庆电子税务局</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link href="../../lib/sui/themes/default/miniui.css" rel="stylesheet" />
+  <link href="../../lib/sui/themes/icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles/override-miniui.css">
+  <link rel="stylesheet" href="../../styles/common.css">
+  <link href="../../styles/navIndex/navIndex.css" rel="stylesheet" type="text/css">
+</head>
+<style>
+</style>
+
+<body>
+  <div class="body-wrap">
+    <div class="body-right">
+      <div class="right-upper">
+        <div class="upper-title"><span>快速导航</span></div>
+        <ul class="upper-content" id="taxSearchList">
+          <li class="invoice-flow"><img src="../../images/potal/5.png" />
+            <p>发票流向</p>
+          </li>
+          <li class="invoice-information"><img src="../../images/potal/19.png" />
+            <p>发票信息</p>
+          </li>
+          <li class="taxpayer-status"><img src="../../images/potal/72.png" />
+            <p>纳税人状态</p>
+          </li>
+          <li class="owe-tax-status"><img src="../../images/potal/4.png" />
+            <p>欠税状态</p>
+          </li>
+          <li class="credit-grade"><img src="../../images/potal/21.png" />
+            <p>信用等级</p>
+          </li>
+          <li class="tax-consult"><img src="../../images/potal/23.png" />
+            <p>办税咨询</p>
+          </li>
+          <li class="tax-navigation"><img src="../../images/potal/69.png" />
+            <p>办税厅导航</p>
+          </li>
+          <li class="taxpayer-school"><img src="../../images/potal/24.png" />
+            <p>纳税人学校</p>
+          </li>
+        </ul>
+      </div>
+      <div class="right-lower">
+        <div class="lower-title"><span>业务展示</span></div>
+        <div class="lower-content" id="lowerContent">
+          <!-- 发票流向查询 begin -->
+          <div class="taxFormContent" style="display:none">
+            <table id="fplxSearchForm" class="searchForm">
+              <tbody>
+                <tr>
+                  <th>税务机关代开:</th>
+                  <td>
+                    <input onvaluechanged="swjgdkClick" class="mini-radiobuttonlist" id="swjgdk" name="swjgdk" textField="text" valueField="id" value="1" data="[{id:'1', text:'是'},{id:'0', text:'否'}]" />
+                  </td>
+                  <th>发票代码</th>
+                  <td>
+                    <input class="mini-textbox" name="fpdm" vtype="required;int;rangeLength:8,12" errorMode="border" width="80" />
+                  </td>
+                  <th>发票号码</th>
+                  <td>
+                    <input class="mini-textbox" name="fphm" vtype="required;int;rangeLength:8,8"  errorMode="border" width="80" />
+                  </td>
+                  <!-- <th id="kpfmcTh" style="display: none;">开票方名称:</th>
+                  <td id="kpfmcTd" style="display: none;">
+                    <input class="mini-textbox" id="fplxswjgdk" id="kpfmc" name="kpfmc" errorMode="border" vtype="required;maxLength:160;isChinese50" />
+                  </td> -->
+                  <th>验证码:</th>
+                  <td>
+                    <input class="mini-textbox" id="code"  name="code" errorMode="border" width="50"  vtype="required;int;rangeLength:4,4"/>
+                    <img  class="codeImg"  id="codeimg0" alt="验证码"  onclick="this.src='/captcha.jpg?'+Math.random();"  />
+                  </td>
+                  <td>
+                    <a class="btn-search" onclick="doQueryFplx()">查询</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div id="fplxGridData" style="width:100%" onload="onload" class="mini-datagrid" idField="" showPager="false" emptyText='<font color="red" style="float: right;padding-right: 2%;">无记录</font>'>
+              <div property="columns">
+                <div field="gprq" headerAlign="center" align="center" dateFormat="YYYY-MM-DD">购票日期
+                </div>
+                <div field="fphmq" headerAlign="center" align="center">发票号码起
+                </div>
+                <div field="fphmz" headerAlign="center" align="center">发票号码止
+                </div>
+                <div field="fpmc" headerAlign="center" align="center">发票名称
+                </div>
+                <div field="swjgmc" headerAlign="center" align="center">发票发售机关
+                </div>
+                <div field="nsrsbh" align="center" headerAlign="center">纳税人识别号
+                </div>
+                <div field="nsrmc" headerAlign="center" align="center">纳税人名称
+                </div>
+                <div field="kprq" headerAlign="center" align="center" dateFormat="YYYY-MM-DD">开票日期
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 发票流向查询 end -->
+          <!-- 发票信息查询 begin -->
+          <div class="taxFormContent" style="display:none">
+            <table id="fpxxSearchForm" class="searchForm" >
+              <tbody>
+                <tr>
+                  <th>发票代码</th>
+                  <td>
+                    <input class="mini-textbox" name="fpdm" vtype="required;int;rangeLength:8,12" errorMode="border" width="80" />
+                  </td>
+                  <th>发票号码</th>
+                  <td>
+                    <input class="mini-textbox" name="fphm" vtype="required;int;rangeLength:8,8"  errorMode="border" width="80" />
+                  </td>
+                  <th>付款方名称</th>
+                  <td>
+                    <input class="mini-textbox" name="fkfmc" vtype="required;maxLength:160;isChinese50" errorMode="border" />
+                  </td>
+                  <th>开票金额</th>
+                  <td>
+                    <input class="mini-textbox" name="kpje" vtype="required;float" errorMode="border" />
+                  </td>
+                  <th>验证码</th>
+                  <td>
+                    <input class="mini-textbox" id="code"  name="code" errorMode="border" width="50"  vtype="required;int;rangeLength:4,4"/>
+                    <img class="codeImg"  id="codeimg1" alt="验证码"  onclick="this.src='/captcha.jpg?'+Math.random();"  />
+                  </td>
+                  <td>
+                    <a class="btn-search" onclick="doQueryFpmx()">查询</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div id="fpxxGridData" style="width:100%" onload="onload"  class="mini-datagrid" idField="" showPager="false" emptyText='<font color="red" style="float: right;padding-right: 2%;">无记录</font>'>
+              <div property="columns">
+                <div field="fpdm" headerAlign="center" align="center">发票代码
+                </div>
+                <div field="fphm" headerAlign="center" align="center">发票号码
+                </div>
+                <div field="gfnsrsbh" headerAlign="center" align="center">购方纳税人识别号
+                </div>
+                <div field="gfnsrmc" headerAlign="center" align="center">购方纳税人名称
+                </div>
+                <div field="xfnsrsbh" headerAlign="center" align="center">销方纳税人识别号
+                </div>
+                <div field="xfnsrmc" headerAlign="center" align="center">销方纳税人名称
+                </div>
+                <div field="je" align="center" headerAlign="center">开票金额
+                </div>
+                <div field="kprq" headerAlign="center" align="center" dateFormat="YYYY-MM-DD">开票日期
+                </div>
+                <div field="kjqk" headerAlign="center" align="center" renderer="onRendererFpmm">开具状态
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 发票信息查询 end -->
+          <!-- 纳税人状态查询 begin -->
+          <div class="taxFormContent" style="display:none">
+            <table id="nsrztSearchForm" class="searchForm">
+              <tbody>
+                <tr>
+                  <th>纳税人识别号:</th>
+                  <td>
+                    <input class="mini-textbox" id="nsrsbh_nsrzt" name="nsrsbh_nsrzt" errorMode="border" width="240" />
+                  </td>
+                  <th>验证码:</th>
+                  <td>
+                    <input class="mini-textbox" id="identifyCode_nsrzt" name="identifyCode_nsrzt" errorMode="border" width="100" />
+                    <img  class="codeImg"  id="codeimg2"  alt="验证码"  onclick="this.src='/captcha.jpg?'+Math.random();"  />
+                  </td>
+                  <td>
+                    <a class="btn-search" onclick="doQueryNsrzt()">查询</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div id="nsrztGridData" style="width:100%" class="mini-datagrid" idField="" showPager="false">
+              <div property="columns">
+                <div field="nsrmc" width="180" headerAlign="center" align="center">纳税人名称
+                  <input property="editor" class="mini-textbox" />
+                </div>
+                <div field="nsrsbh" width="200" renderer="" align="center" headerAlign="center">纳税人识别号
+                </div>
+                <div field="nsrztmc" width="70" headerAlign="center" align="center" headerAlign="center" renderer="onSwitchType">纳税人状态
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 纳税人状态查询 end -->
+          <!-- 欠税状态查询 begin -->
+          <div class="taxFormContent" style="display:none">
+            <table id="qsztSearchForm" class="searchForm">
+              <tbody>
+                <tr>
+                  <th>纳税人识别号:</th>
+                  <td>
+                    <input class="mini-textbox" name="nsrsbh" vtype="required;nsrsbh" errorMode="border" width="240" />
+                  </td>
+                  <th>验证码:</th>
+                  <td>
+                    <input class="mini-textbox" id="code"  name="code" errorMode="border" width="50"  vtype="required;int;rangeLength:4,4"/>
+                    <img  class="codeImg"   id="codeimg3"  alt="验证码"  onclick="this.src='/captcha.jpg?'+Math.random();"  />
+                  </td>
+                  <td>
+                    <a class="btn-search" onclick="doQueryQszt()">查询</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div id="qsztGridData" style="width:100%" onload="onload"  class="mini-datagrid" idField="nsrsbh" showPager="false" emptyText='<font color="red" style="float: right;padding-right: 2%;">无记录</font>' >
+              <div property="columns">
+                <div type="indexcolumn" headerAlign="center" align="center">序号</div>
+                <div field="nsrsbh" headerAlign="center" align="center">纳税人识别号
+                </div>
+                <div field="nsrmc" headerAlign="center" align="center">纳税人名称
+                </div>
+                <div field="qfzt" headerAlign="center" align="center" renderer="onRendererQszt">是否欠税
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 欠税状态查询 end -->
+          <!-- 信用等级查询begin -->
+          <div class="taxFormContent" style="display:none">
+            <table id="xydjSearchForm" class="searchForm">
+              <tbody>
+                <tr>
+                  <th>纳税人识别号:</th>
+                  <td>
+                    <input class="mini-textbox" id="nsrsbh_xydj" name="nsrsbh_xydj" errorMode="border" width="240" />
+                  </td>
+                  <th>验证码:</th>
+                  <td>
+                    <input class="mini-textbox" id="identifyCode_xydj" name="identifyCode_xydj" errorMode="border" width="100" />
+                    <img  class="codeImg"  alt="验证码"  id="codeimg4"  onclick="this.src='/captcha.jpg?'+Math.random();"  />
+                  </td>
+                  <td>
+                    <a class="btn-search" onclick="doQueryXydj()">查询</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div id="xydjGridData" style="width:100%" class="mini-datagrid" idField="nsrsbh" showPager="false" emptyText='<font color="red" style="float: right;padding-right: 2%;">无记录</font>'>
+              <div property="columns">
+                <div type="indexcolumn" headerAlign="center" align="center">序号</div>
+                <div field="nsrsbh" headerAlign="center" align="center">纳税人识别号
+                </div>
+                <div field="nsrmc" headerAlign="center" align="center">纳税人名称
+                </div>
+                <div field="nsrxydj" headerAlign="center" align="center">纳税信用等级
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 信用等级查询end -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../../lib/base/jquery.min.js"></script>
+  <script src="../../lib/sui/mini-all-min.js"></script>
+  <script src="../../scripts/commonjs/validate.js"></script>
+  <script src="../../scripts/pagejs/sscx/taxSearch.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>重庆电子税务局</title>
+  <link href="../../lib/sui/themes/default/miniui.css" rel="stylesheet" />
+  <link href="../../lib/sui/themes/icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles/override-miniui.css">
+  <link rel="stylesheet" href="../../styles/common.css">
+  <link rel="stylesheet" href="../../styles/handleTaxService/cq-framework.css">
+</head>
+
+<body>
+  <div class="body-wrap">
+    <div style="" class="close-body">
+      <div style="float: left;width: 120px;height: 100%;line-height: 2em"></div>
+      <div style="float: left;width: 40px;height: 100%">
+        <div style="" class="body-sx" onclick="Form.Min()"></div>
+      </div>
+      <div style="float: left;width: 40px;height: 100%">
+        <div style="" class="body-fd" onclick="Form.Max()"></div>
+      </div>
+      <div style="float: left;width: 40px;height: 100%">
+        <div style="width: 40px;height: 30px;" class="body-close" onclick="Form.Close()"></div>
+      </div>
+    </div>
+    <div class="header">
+      <h2 class="left">重庆市电子税务局</h2>
+      <div class="right user-info">
+        <ul>
+          <li>用户名：重庆张三丰文化影视有限公司</li>
+          <li>税号：2378370938020983</li>
+          <li><img src="../../images/service/sx.png" alt="刷新" class="sx"></li>
+          <li>
+            <img src="../../images/service/yyzx.png" alt="" class="yyzx"><a href="https://17hs.servyou.com.cn/appCenter/views/appCenter/index.html" target="allbox">应用中心</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="content">
+      <div class="left menu-list">
+        <div class="tax-area">国税业务办税区</div>
+        <div class="border">
+          <ul id="menuList">
+            <li><a class="tax-service" href="checkTaxService.html" target="allbox">办税服务</a></li>
+            <li><a class="my-app" href="https://17hs.servyou.com.cn/appCenter/views/myApp/myApp.html" target="allbox">我的应用</a></li>
+            <li><a class="search-service" href="searchService.html" target="allbox">查询服务</a></li>
+            <li><a class="interaction" href="interactionService.html" target="allbox">咨询互动</a></li>
+          </ul> 
+          <div class="space-tax">地税业务办税区</div>
+        </div>
+      </div>
+      <div class="content-box left">
+        <iframe class="iframe" frameborder="no" scrolling="no" border="0" name="allbox" width="100%" height="100%" src="checkTaxService.html"></iframe>
+      </div>
+    </div>
+  </div>
+  <script src="../../lib/base/jquery.min.js"></script>
+  <script src="../../lib/sui/mini-all-min.js"></script>
+  <script src="../../scripts/pagejs/taxService/taxService.js"></script>
+</body>
+
+</html>

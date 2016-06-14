@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>发票流向查询</title>
+  <link href="../../lib/sui/themes/default/miniui.css" rel="stylesheet" />
+  <link href="../../lib/sui/themes/icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles/override-miniui.css">
+  <link rel="stylesheet" href="../../styles/common.css">
+  <link href="../../styles/navIndex/navIndex.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <div>
+    <table id="searchForm">
+      <tbody>
+        <tr>
+          <th>税务机关代开:</th>
+          <td>
+            <input class="mini-radiobuttonlist" id="swjgdk" name="swjgdk" textField="text" valueField="id" value="1" data="[{id:'1', text:'是'},{id:'0', text:'否'}]" />
+          </td>
+          <th>发票代码:</th>
+          <td>
+            <input class="mini-textbox" name="fpdm" errorMode="border" width="100" />
+          </td>
+          <th>发票号码:</th>
+          <td>
+            <input class="mini-textbox" name="fphm" errorMode="border" width="100" />
+          </td>
+          <th>开票方名称:</th>
+          <td>
+            <input class="mini-textbox" name="kpfmc" errorMode="border" />
+          </td>
+          <th>随机码:</th>
+          <td>
+            <input class="mini-textbox" id="" name="" errorMode="border" width="100" />
+          </td>
+          <td>
+            <a class="btn-search" onclick="doQuery()">查询</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div id="gridData" style="width:100%" class="mini-datagrid" idField="nsrsbh" showPager="false" emptyText='<font color="red" style="float: right;padding-right: 2%;">无记录</font>' url="../../data/cx_fplx.json">
+    <div property="columns">
+      <div type="indexcolumn">序号</div>
+      <div field="gprq" headerAlign="center" align="center">购票日期
+      </div>
+      <div field="fphmq" headerAlign="center" align="center">发票号码起
+      </div>
+      <div field="fphmz" headerAlign="center" align="center">发票号码止
+      </div>
+      <div field="fpmc" headerAlign="center" align="center">发票名称
+      </div>
+      <div field="swjgmc" headerAlign="center" align="center">发票发售机关
+      </div>
+      <div field="swjgdkfp" headerAlign="center" align="center">税务机关代开发票
+      </div>
+      <div field="nsrsbh" align="center" headerAlign="center">纳税人识别号
+      </div>
+      <div field="nsrmc" headerAlign="center" align="center">纳税人名称
+      </div>
+      <div field="kprq" headerAlign="center" align="center">开票日期
+      </div>
+    </div>
+  </div>
+  <script src="../../lib/base/jquery.min.js"></script>
+  <script src="../../lib/sui/mini-all-min.js"></script>
+  <script src="../../scripts/pagejs/sscx/cx_fplx.js"></script>
+</body>
+
+</html>

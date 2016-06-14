@@ -1,0 +1,69 @@
+#taxpayerInfoMaintain {
+  width: 900px;
+  position: relative;
+  padding:10px 0 0 25px;
+}
+
+#taxpayerInfoMaintain img.bg-right {
+  position: absolute;
+  top: 160px;
+  left: 600px;
+}
+
+.taxpayerInfoMaintain-title {
+  border-bottom: 1px dashed #ccc;
+  padding: 10px 0;
+}
+
+#taxpayerInfoMaintain .taxpayerInfoMaintain-form>table tr {
+  height: 40px;
+  font-size: 14px;
+  color: #333;
+}
+
+.taxpayerInfoMaintain-form{
+  padding-left: 20px;
+}
+
+#taxpayerInfoMaintain .taxpayerInfoMaintain-form>table tr td:first-child {
+  color: #6c6c6c;
+}
+
+/*.taxpayerInfoMaintain-form>table tr td a {
+  color: #1aacda;
+  text-decoration: underline;
+  padding-left: 10px;
+}*/
+
+.btn-blue{
+  width: 350px;
+  margin-left: -116px;
+}
+
+.mini-messagebox-question{
+  background: 0;
+}
+
+.mini-button{
+  background: #37bcf7;
+  border:0;
+  border-radius: 4px;
+  width: 80px !important;
+}
+
+.mini-button, a.mini-button{
+  color: #fff;
+}
+
+body a:hover.mini-button{
+  border:0;
+  background: #1aacda;
+}
+
+.mini-panel-viewport{
+  height: 130px !important;
+}
+
+.mini-panel{
+  width: 340px !important;
+}

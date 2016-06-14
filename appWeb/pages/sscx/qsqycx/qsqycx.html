@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+<head>
+  <title>欠税企业查询</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  body {
+    font: normal 14px/2 '微软雅黑';
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-style: normal
+  }
+  
+  .title {
+    padding-left: 10px;
+    color: #ffffff;
+    background-color: #35BEF4;
+    text-align: center;
+  }
+  
+  li {
+    margin-top: 15px;
+    margin-left: 10px;
+  }
+  
+  input {
+    font-size: 14px;
+    padding-left: 4px;
+    font-family: "微软雅黑";
+    height: 30px;
+    line-height: 30px;
+  }
+  
+  .number-check {
+    width: 58%;
+  }
+  
+  .verify-input,
+  #codeImg {
+    width: 28%;
+  }
+
+  #verifyImg{
+    height: 30px;
+  }
+  
+  .action-verifycode input {
+    margin-left: 42px;
+  }
+  
+  .auto-change-verify-handle {
+    height: 30px;
+    vertical-align: middle;
+  }
+  
+  .button-center {
+    margin: 20px 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  button {
+    font-family: "微软雅黑";
+    width: 200px;
+    height: 30px;
+    border: 0px;
+    border-radius: 7px;
+    color: #ffffff;
+    background-color: #FD860E;
+  }
+  
+  p {
+    margin-left: 10px;
+  }
+  </style>
+</head>
+<body>
+<div class="content">
+    <h2 class="title">欠税企业查询</h2>
+    <form action="/searchPage.html" method="get" id="numberForm">
+        <ul>
+            <li class="form-item action-number">
+                <label class="form-label">纳税人识别号：</label>
+                        <span class="form-act">
+                            <input id="nsrsbh" class="number-check" type="text" name="nsrsbh"
+                                   value="" placeholder="纳税人识别号" vtype="required" autofocus="autofocus"/>
+                        </span>
+            </li>
+            <li class="form-item action-verifycode">
+                <label class="form-label">验证码：</label>
+                    <span class="form-act">
+                    <input  id="code" class="verify-input" type="text" name="code"
+                           placeholder="填写验证码" maxlength="4" autocomplete="off"/>
+                    <img id="codeImg"  src="/captcha.jpg" onclick="this.src='/captcha.jpg?'+Math.random();" alt="验证码" title="点击更换验证码"
+                         id="verifyImg" class="auto-change-verify-handle">
+                    </span>
+            </li>
+        </ul>
+    </form>
+    <div class="button-center">
+    <button type="button" onclick="doQuery();" form="numberForm" value="Submit">查询</button>
+    </div>
+    <p  class="info">是否欠税：<span id="qfzt"></span></p>
+</div>
+<script src="../../../../scripts/commonjs/validate.js"></script>
+</body>
+
+<script type="text/javascript">
+function validate(){
+	var nsrsbh = $("#nsrsbh").val();
+	var code = $("#code").val();
+	var reg1 = /^[a-zA-Z0-9\-]{15,20}$/;
+	var reg2 = /^\d{4}$/;
+	var b1 = reg1.test(nsrsbh);
+	var b2 = reg2.test(code);
+	if(nsrsbh == ""){
+		alert("请输入纳税人识别号!");
+		return false;
+	}
+	if(code == ""){
+		alert("请输入验证码!");
+		return false;
+	}
+	if(!b1){
+		alert("请输入正确的纳税人识别号");
+		return false;
+	}
+	if(!b2){
+		alert("请输入四位数字验证码!");
+		return false;
+	}
+	return true;
+}
+var doQuery = function(){
+		if(!validate()){
+			return;
+		}
+		var nsrsbh = $("#nsrsbh").val();
+		var code = $("#code").val();
+		var json = "{'nsrsbh':'"+nsrsbh+"' ,'code':'"+code+"'}";
+		$.ajax({
+		    url: "/api/sscx/qsqy",
+		    type: "post",
+		    data: { "jsonStr": json },
+		    success: function (text) {
+		        var result = text;
+		        if(result.success){
+		        	var value = result.data[0];
+		        	
+		        	var qfzt = value["qfzt"];
+		        	if(qfzt == 1){
+	        			$("#qfzt").html("是");
+		        	}else if(qfzt == 0){
+	        			$("#qfzt").html("否");
+		        	}
+		        }else{
+		        	//alert(result.message);
+		        	alert(result.paramList[0]);
+		        }
+		        $("#codeImg").attr("src" ,"/captcha.jpg?"+Math.random());
+		    }
+		});
+};
+</script>
+<script src="../../../../lib/base/jquery.min.js"></script>
+
+</html>

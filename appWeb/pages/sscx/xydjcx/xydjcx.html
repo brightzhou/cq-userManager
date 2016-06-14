@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<head>
+  <title>纳税人信用登记查询</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  body {
+    font: normal 14px/2 '微软雅黑';
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-style: normal;
+    font-family: "微软雅黑";
+  }
+  
+  .title {
+    padding-left: 10px;
+    color: #ffffff;
+    background-color: #35BEF4;
+    text-align: center;
+  }
+  
+  li {
+    margin-top: 15px;
+    margin-left: 10px;
+  }
+  
+  input {
+    font-size: 14px;
+    padding-left: 4px;
+    font-family: "微软雅黑";
+    height: 30px;
+    line-height: 30px;
+  }
+  
+  #nsrsbh {
+    width: 58%;
+  }
+  
+  #identifyCode,
+  #verifyImg {
+    width: 28%;
+  }
+
+  #verifyImg{
+    height: 30px;
+  }
+  
+  .action-verifycode input {
+    margin-left: 42px;
+  }
+  
+  .auto-change-verify-handle {
+    height: 30px;
+    vertical-align: middle;
+  }
+
+  .button-center {
+    margin: 20px 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  button {
+    font-family: "微软雅黑";
+    width: 200px;
+    height: 30px;
+    border: 0px;
+    border-radius: 7px;
+    color: #ffffff;
+    background-color: #FD860E;
+  }
+  
+  p {
+    margin-left: 10px;
+  }
+  </style>
+</head>
+<body>
+<div class="content">
+    <h2 class="title">信用等级查询</h2>
+    <form action="/searchPage.html" method="get" id="numberForm">
+        <ul>
+            <li class="form-item action-number">
+                <label class="form-label">纳税人识别号：</label>
+                        <span class="form-act">
+                            <input id="nsrsbh" class="number-check" type="text" name="nsrsbh"
+                                   value="" placeholder="纳税人识别号" vtype="required" autofocus="autofocus"/>
+                        </span>
+            </li>
+            <li class="form-item action-verifycode">
+                <label class="form-label">验证码：</label>
+                    <span class="form-act">
+                    <input id="identifyCode" class="verify-input" type="text" name="identifyCode"
+                           placeholder="填写验证码" maxlength="4" autocomplete="off"/>
+                    <img src="/captcha.jpg" onclick="this.src='/captcha.jpg?'+Math.random();" alt="验证码" title="点击更换验证码"
+                         id="verifyImg" class="auto-change-verify-handle">
+                    </span>
+            </li>
+        </ul>
+    </form>
+    <div class="button-center">
+    <button type="button" id="button" form="numberForm" value="Submit">查 询</button>
+    </div>
+    <p class="info">信用等级:<span id="nsrxydj"></span></p>
+</div>
+ <script src="../../../../lib/base/jquery.min.js"></script>
+  <script src="../../../scripts/common/validate.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    $('#button').click(function() {
+      var nsrsbh = $('#nsrsbh').val();
+      var identifyCode = $('#identifyCode').val();
+      if (!nsrsbhValidate('#nsrsbh')) {
+        alert("请输入正确的纳税人识别号!");
+        return;
+      }
+      if (identifyCode.length !== 4) {
+        alert("请输入正确的四位验证码!");
+        return;
+      }
+      $.ajax({
+        url: "/api/sscx/queryNsxydj",
+        type: "post",
+        data: {
+          "nsrsbh": nsrsbh,
+          "identifyCode": identifyCode
+        },
+        success: function(data) {
+          if (!data.success) {
+            if (data.messageCode === "80480804") {
+              alert("验证码输入错误!");
+              return;
+            }
+            alert("查询失败!");
+            return;
+          }
+          if (data.data.length == 0) {
+          	alert("没有查询到数据!");
+            return;
+          }
+          $('#nsrxydj').text(data.data[0].nsrxydj);
+        },
+        error: function(text) {
+          alert("查询！请求失败，请稍后再试!");
+        }
+      });
+    });
+  });
+  </script>
+</body>
+</html>

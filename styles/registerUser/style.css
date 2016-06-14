@@ -1,0 +1,172 @@
+@font-face {
+  font-family: "微软雅黑";
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  background: #f4f5f7;
+}
+
+
+/**{-moz-box-sizing:border-box;box-sizing:border-box;}*/
+
+.alert {
+  font-size: 14px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.alert-info {
+  color: #3A87AD;
+  background-color: #D9EDF7;
+  border-color: #BCE8F1;
+}
+
+.alert-info .icon-info-sign {
+  background: url(../icons/info.png) center center no-repeat;
+}
+
+body,
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: '微软雅黑', sans-serif;
+  height: 100%;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  width: 100%;
+}
+
+.toparea {
+  background: #f6f9f9;
+  width: 100%;
+  height: 65px;
+}
+
+.width970 {
+  width: 970px;
+  margin: 0 auto;
+}
+
+.foot {
+  line-height: 30px;
+  padding: 15px 0 0 0;
+  border-top: 1px solid #EDEFF0;
+  margin-top: 10px;
+}
+
+
+/*步骤*/
+
+.step-header {
+  font-family: 'Open Sans';
+  font-size: 13px;
+  color: #393939;
+  line-height: 1.5;
+  background: #fff;
+}
+
+/*.step-footer {
+  background-color: #F8F8F8;
+  border-top: 1px solid #E4E9EE;
+  line-height: 19.5px;
+  margin-top: 0;
+  padding: 12px 20px 14px 20px;
+}*/
+
+.step-footer{
+  position: absolute;
+  bottom:20px;
+  left: 50%;
+  margin-left: -50px;
+}
+
+.step-footer a{
+  font-weight: bolder;
+  border-radius: 4px;
+}
+
+.step-content {
+  display: none;
+  padding: 0;
+  background: #fff;
+  width: 95%;
+  margin: 15px auto;
+  padding: 5px
+}
+
+.wizard-steps {
+  display: block;
+  background: url(images/nextStep/step1.png) top center no-repeat;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+
+.wizard-steps span {
+  display: block;
+  clear: both;
+  text-align: center;
+  padding: 0 20px;
+  font-size: 14px;
+}
+
+.wizard-steps .step {
+  padding: 15px 0;
+}
+
+.wizard-steps .ok {
+  padding: 15px 0;
+  background: url(images/nextStep/ok.gif) center center no-repeat;
+  color: #87BA21;
+}
+
+.wizard-steps.stepend {
+  background: url(images/nextStep/step_r_1.png) top center no-repeat;
+}
+
+.wizard-steps.stepend.stepsover {
+  background: url(images/nextStep/step_r_2.png) top center no-repeat;
+}
+
+.wizard-steps .ok {
+  display: none;
+}
+
+.wizard-steps.stepsover .ok {
+  display: block;
+  content: ""
+}
+
+.wizard-steps.stepsover .step {
+  display: none;
+}
+
+.wizard-steps.stepsover.current .ok {
+  display: none;
+}
+
+.wizard-steps.stepsover.current .step {
+  display: block;
+}
+
+.wizard-steps.stepsover {
+  background: url(images/nextStep/step2.png) top center no-repeat;
+}
+
+.wizard-steps.stepstart {
+  background: url(images/nextStep/step_l_1.png) top center no-repeat;
+}
+
+.wizard-steps.stepsover.stepstart {
+  background: url(images/nextStep/step_l_2.png) top center no-repeat;
+}

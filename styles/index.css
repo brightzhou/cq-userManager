@@ -1,0 +1,536 @@
+* {
+    font-family: 'Microsoft Yahei', Arial, Simsun, sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /*min-width: 1024px;
+  height: 600px;*/
+  background-color: #F3F6F6;
+  /*background-size: cover;*/
+}
+/*登录界面*/
+.header-wrap {
+  width: 100%;
+  margin: 0 auto;
+  /*width: 100%;*/
+  height: 100px;
+  /*background: url("../images/header.png") no-repeat center center;*/
+}
+
+.header-wrap-bg {
+  background-image: url("../images/header.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.header-wrap .header-title {
+  width: 50%;
+  height: 100px;
+  background-image: url("../images/chongqing-online-tax-bureau-.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 60%;
+}
+
+.header-wrap .header-tel {
+  position: relative;
+  top: -14px;
+  text-align: right;
+  margin-right: 16%;
+  color: #ffffff;
+}
+
+.tool-wrap {
+  height: 56px;
+  width: 960px;
+  margin: 0 auto;
+  margin-top: 26px;
+  border: 1px solid #E5E5E5;
+  background-color: #ffffff;
+}
+
+.tool-wrap div {
+  float: left;
+}
+
+.tool-wrap .latest-notice {
+  font-size: 14px;
+  color: #ed6768;
+  width: 15%;
+  line-height: 60px;
+  text-align: center;
+}
+
+.tool-wrap .latest-notice>img {
+  vertical-align: middle;
+  margin-right: 5%;
+}
+
+.tool-wrap .noticeInfo {
+  font-size: 14px;
+  width: 35%;
+  line-height: 60px;
+  color: #333333;
+  margin-left: 2%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tool-wrap .noticeDate {
+  font-size: 14px;
+  line-height: 60px;
+  width: 11%;
+  margin: 0px 1%;
+}
+
+.tool-wrap .tax-system > span {
+  position: relative;
+  top: 30px;
+  left: -26%;
+  color: #ed6768;
+}
+
+.tool-wrap .tax-system .tax-month {
+  top: 5px;
+  left: 20%;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.tool-wrap .tax-text {
+  margin-top: 1.7%;
+}
+
+.tool-wrap .tax-calendar {
+  width: 7%;
+  float: right;
+  height: 60px;
+}
+
+.tool-wrap .tax-calendar img {
+  position: relative;
+  left: 10%;
+}
+
+.tool-wrap .tax-calendar .tax-month {
+  position: relative;
+  top: -52px;
+  left:33%;
+  color: #ffffff;
+}
+
+.tool-wrap .tax-calendar .tax-day {
+  position: relative;
+  top: -28px;
+  left: -4px;
+}
+
+.body-wrap {
+  height: 64%;
+  width: 960px;
+  margin: auto;
+}
+
+.body-wrap > div,
+.body-left > div {
+  height: 95%;
+  float: left;
+}
+
+.body-right{
+  height: 94% !important;
+}
+
+.body-wrap .body-left {
+  margin-top: -20px;
+  width: 65%;
+}
+
+.body-wrap .body-left .icon-main {
+  margin-top: 20px;
+  width: 15%;
+}
+
+.body-wrap .body-left .left-Icon {
+  line-height: 50px;
+  cursor: pointer;
+}
+
+.body-wrap .body-left .publicity {
+    background: url("../images/blueBg.png") no-repeat center center;
+}
+
+.body-wrap .body-left .tax {
+    background: url("../images/greenBg.png") no-repeat center center;
+}
+
+.body-wrap .body-left .rigInt {
+    background: url("../images/redBg.png") no-repeat center center;
+}
+
+.body-wrap .body-left .interaction {
+    background: url("../images/orangeBg.png") no-repeat center center;
+}
+
+.body-wrap .body-left .left-Icon img{
+    vertical-align: middle;
+    margin-top: 18px;
+    margin-left: 28px;
+}
+
+.body-wrap .body-left .left-Icon span{
+    margin-left: 17px;
+    color: #ffffff;
+}
+
+.body-wrap .body-left .left-Icon:last-child span{
+    margin-left: 30px;
+}
+
+.body-wrap .body-left .content-main .left-detail.show-content{
+    display: block;
+}
+
+.body-wrap .body-left .content-main .left-detail {
+  display: none;
+  width: 460px;
+  height: 94%;
+  margin-top: 20px;
+  margin-bottom:0;
+  margin-left: 14px;
+  margin-right: 14px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #E5E5E5;
+}
+
+.body-left .content-main .left-title{
+    color: #39ADE5;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/*body-right*/
+.body-wrap .body-right {
+  width: 34%;
+  border: 1px #b5d9f3 solid;
+  background-color: #ffffff;
+  box-shadow: -1px 1px 3px 3px #eaf2f6;
+  -ms-box-shadow: -1px 1px 3px 3px #eaf2f6;
+}
+
+.body-right .login-main {
+    height: 10%;
+    width: 100%;
+}
+
+.body-right .login-main div {
+    float: left;
+    height: 100%;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.body-right .body-main {
+  width: 100%;
+  height: 80%;
+}
+
+.body-right .form-input-content{
+    display: none;
+}
+
+.body-right .form-input-content.show-form{
+    display: block;
+}
+
+.body-right .login-main .right-tab {
+    width: 33%;
+    font-size: 18px;
+    color: #999999;
+    background-color: #e2e7e8;
+}
+
+.body-right .login-main .right-tab:last-child{
+    width: 34%;
+}
+
+.login-main .loginSelected{
+    color: #ed6768 !important;
+    background-color: #ffffff !important;
+}
+
+.form-input-yzm {
+  height: 15%;
+  width: 100%;
+  margin-top: 5%
+}
+
+.form-input-yzm .form-input-yzm-left {
+  float: left;
+  height: 100%;
+  width: 60%;
+  border: 1px #c2dce9 solid;
+  background-color: white
+}
+
+.form-input-yzm .form-input-yzm-right {
+  float: left;
+  height: 100%;
+  width: 39%
+}
+
+.form-input-yzm .form-input-yzm-right img {
+  height: 100%;
+  width: 80px;
+  cursor: pointer;
+}
+input {
+  margin: 0px;
+  padding: 0px;
+  /*表单输入框内文字居中*/
+  vertical-align: middle;
+  /*表单控件上下居中对齐*/
+  outline: none;
+}
+.form-input-content{
+    width: 80%;
+    margin: auto;
+    height: 80%
+}
+.form-input-content .form-input-user{
+    height: 15%;
+    width: 100%;
+    border: 1px #c2dce9 solid;
+    margin-top: 5%;
+}
+.form-input-content .form-input-user div{
+    float: left;
+    height: 100%;
+    display: table;
+}
+.form-input-content .form-input-user .form-input-user-left{
+    width: 15%;
+    background-color: white;
+    height: 100%;
+    display: table;
+}
+
+.form-input-content .form-input-user .form-input-user-left div {
+  width: 95%;
+  height: 60%;
+  border-right: 1px #f1f1f1 solid;
+  margin-top: 20%;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+.form-input-content .form-input-user .form-input-user-right{
+    width: 85%;
+}
+
+.form-input-content .form-input-user .form-input-user-right input {
+  width: 98%;
+  height: 99%;
+  border: none;
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 15px;
+  padding-left: 5px
+}
+
+.login-btn {
+  width: 45%;
+  background-color: #ec6868;
+  line-height: 40px;
+  height: 40px;
+  text-align: center;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  float: left
+}
+
+.reset-btn {
+  width: 45%;
+  background-color: #e3e8eb;
+  line-height: 40px;
+  height: 40px;
+  text-align: center;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  float: left;
+  margin-left: 10%
+}
+.login-btn:hover{
+    cursor: pointer;
+    background-color: #246c9f;
+}
+.reset-btn:hover{
+    cursor: pointer;
+    background-color: #c7cbce;
+}
+
+.ping-login-btn {
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #2b88cb;
+  margin: auto;
+  margin-top: 10%;
+  text-align: center;
+  cursor: pointer;
+  color: white
+}
+.ping-login-btn:hover{
+    background-color: #246c9f;
+}
+
+  /*电子发票*/
+.wrap-header {
+    margin: auto;
+    width: 900px;
+    height: 8%;
+    background-image: url('../images/logo.png');
+    background-repeat: no-repeat;
+    background-position-y: 5px;
+    line-height: 50px;
+    position: relative;
+
+}
+
+.wrap-header .wrap-header-title {
+    font-size: 20px;
+    color: #006cda;
+    font-weight: bold;
+    margin-left: 60px;
+}
+
+.wrap-header .wrap-header-font {
+    font-size: 15px;
+    margin-left: 10px;
+    color: #bbbbbb;
+}
+.wrap-tool{
+    background-color: #6da3f1;
+    height: 40px;
+    height: 6%;
+    position: relative;
+}
+.wrap-tool ul{
+    list-style: none;
+    width: 900px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    margin: auto;
+}
+.wrap-tool ul li{
+    float: left;
+    width: 100px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    color:white;
+}
+.wrap-tool ul li:hover{
+    background-color: #89b2ee;
+    cursor:pointer;
+}
+.wrap-tool ul li[class~=active]{
+    background-color: #407ace !important;
+}
+
+.wrap-tool ul li:not(.active) {}
+
+.wrap-tool ul li:first-child {
+  margin-left: 0px !important;
+}
+.wrap-body{
+    background-color: #edeff0;
+    width: 100%;
+    height: 81%;
+    position: relative;
+
+
+}
+.wrap-body> .wrap-content{
+    width: 900px;
+    margin: auto;
+    background-color: white;
+    height: 90%;
+    position: relative;
+    top: 20px;
+}
+.wrap-footer{
+    height: 5%;
+    background-color: #dfe6f1;
+    display: table;
+    width: 100%;
+
+}
+.wrap-footer span{
+    color: #b5babd;
+    font-size: 13px;
+    display: table-cell;
+    vertical-align: middle;
+    text-indent:2em;
+
+}
+.wrap-header .title-div{
+    width: 60px;
+    height: 100%;
+    float: right;
+    background-image: url("../images/zh.png") ;
+    background-repeat: no-repeat;
+    background-position: 13px  5px;
+    border-left:1px #eeeeee solid;
+    border-right:1px #eeeeee solid;
+    cursor:pointer;
+}
+.tool-active-color{
+    background-color:#407ace ;
+}
+.form-hide{
+    display: none;
+}
+
+.close-body {
+  width: 200px;
+  height: 50px;
+  position: absolute;
+  right: 0;
+  font-size: 0.9em;
+  line-height: 3em;
+  text-align: center;
+  ;
+}
+.body-sx{
+    width: 40px;
+    height: 30px;
+    background-image: url('../images/sx.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.body-sx:hover{
+    background-color: #549dfb;
+}
+.body-close{
+    width: 40px;
+    height: 30px;
+    background-image: url('../images/gb.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.body-close:hover{
+    background-color: #da3610;
+}

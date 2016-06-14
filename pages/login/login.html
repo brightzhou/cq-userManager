@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>国税登录</title>
+
+<meta name="viewport"
+	content="width=device-width, initial-scale=1,, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<!-- 删除苹果默认的工具栏和菜单栏 -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<!-- 设置苹果工具栏颜色 -->
+<meta name="format-detection" content="telphone=no, email=no" />
+<!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+<!-- 启用360浏览器的极速模式(webkit) -->
+<meta name="renderer" content="webkit">
+<!-- 避免IE使用兼容模式 -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+<meta name="HandheldFriendly" content="true">
+<!-- 微软的老式浏览器 -->
+<meta name="MobileOptimized" content="320">
+<!-- uc强制竖屏 -->
+<meta name="screen-orientation" content="portrait">
+<!-- QQ强制竖屏 -->
+<meta name="x5-orientation" content="portrait">
+<!-- UC强制全屏 -->
+<meta name="full-screen" content="yes">
+<!-- QQ强制全屏 -->
+<meta name="x5-fullscreen" content="true">
+<!-- UC应用模式 -->
+<meta name="browsermode" content="application">
+<!-- QQ应用模式 -->
+<meta name="x5-page-mode" content="app">
+<!-- windows phone 点击无高光 -->
+<meta name="msapplication-tap-highlight" content="no">
+<!-- 适应移动端end -->
+<meta name="Description" content="2015腾讯大渝网城市频道答谢会">
+<meta name="Keywords" content="2015腾讯大渝网城市频道答谢会">
+
+<!-- 自有样式 -->
+<link rel="stylesheet" type="text/css"
+	href="/PortalWeb/styles/login/login.css" />
+
+<script type="text/javascript">
+	function prepareLoginForm() {
+		$('myLoginForm').action = casLoginURL;
+		$("lt").value = loginTicket;
+	}
+
+	function checkForLoginTicket() {
+		var loginTicketProvided = false;
+		var query = '';
+		casLoginURL = 'http://127.0.0.1:8080/ssoserver/login?service=http://127.0.0.1:8001/api/yhgl/index';
+		thisPageURL = 'http://127.0.0.1:8001/api/login';
+		casLoginURL += '&login-at=' + encodeURIComponent(thisPageURL);
+
+		query = window.location.search;
+		query = query.substr(1);
+
+		var param = new Array();
+		//var value = new Array();
+		var temp = new Array();
+		param = query.split('&');
+
+		i = 0;
+		while (param[i]) {
+			temp = param[i].split('=');
+			if (temp[0] == 'lt') {
+				loginTicket = temp[1];
+				loginTicketProvided = true;
+			}
+			if (temp[0] == 'error_message') {
+				error = temp[1];
+			}
+			i++;
+		}
+		if (!loginTicketProvided) {
+			location.href = casLoginURL + '&get-lt=true';
+		}
+	}
+
+	function $(id) {
+		return document.getElementById(id);
+	}
+	var loginTicket;
+	var error;
+	var casLoginURL;
+	var thisPageURL;
+
+	checkForLoginTicket();
+	onload = prepareLoginForm;
+</script>
+</head>
+<body>
+	<div class="main" id="main">
+		<div class="content">
+			<h3>用户登录</h3>
+			<script type="text/javascript" language="javascript">
+				if (error) {
+					error = decodeURIComponent(error);
+					document.write(error);
+				}
+			</script>
+			<div class="form-div">
+				<form id="myLoginForm" action="" method="post">
+					<input type="text" class="username" name="username">
+					<input type="text" class="password" name="password">
+					<input type="text" class="codes" name="captcha">
+					<!--验证的图片-->
+					<img src="http://127.0.0.1:8080/ssoserver/captcha.jpg" class="yzm5">
+					<img src="/PortalWeb/images/login/denglu.png" class="denglu">
+					
+					<input type="hidden" value="submit" name="_eventId" />
+					<input type="hidden" name="execution" id="lt" />
+					<input type="hidden" name="userType" value="02" />
+					<input type="hidden" name="lt">
+				</form>
+			</div>
+			<button class="loginbtn" onclick="javascript:$('myLoginForm').submit();">立即登录</button>
+		</div>
+	</div>
+</body>
+</html>

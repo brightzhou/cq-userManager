@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>办税服务</title>
+  <link href="../../lib/sui/themes/default/miniui.css" rel="stylesheet" />
+  <link href="../../lib/sui/themes/icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles/override-miniui.css">
+  <link rel="stylesheet" href="../../styles/common.css">
+  <link rel="stylesheet" href="../../styles/handleTaxService/taxService.css">
+</head>
+
+<body>
+  <div id="checkTaxService" class="center-region-spacing">
+    <div style="padding:10px 20px">
+      <div class="nav-service">
+        <h3>办税服务</h3>
+        <ul>
+          <li>
+            <a href=""><span><img src="../../images/service/small-scale.png" alt=""></span><em>小规模申报</em></a>
+          </li>
+          <li>
+            <a href=""><span><img src="../../images/service/fp-manager.png" alt=""></span><em>发票管理</em></a>
+          </li>
+          <li>
+            <a href=""><span><img src="../../images/service/reduction-tax.png" alt=""></span><em>减免税网上申报</em></a>
+          </li>
+          <li>
+            <a href=""><span><img src="../../images/service/tax-register.png" alt=""></span><em>税务登记</em></a>
+          </li>
+          <li>
+            <a href=""><span><img src="../../images/service/common-register.png" alt=""></span><em>一般纳税人登记</em></a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <div id="chartData" class="left chart-data">
+        </div>
+        <div class="left count-data">
+          <div class="total">
+            <p class="number">23,849.39</p>
+            <p class="words">税款缴纳总量</p>
+          </div>
+          <div class="total">
+            <p class="number">600</p>
+            <p class="words">截止当月您的发票领用数量</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../../lib/base/jquery.min.js"></script>
+  <!-- <script src="../../lib/sui/mini-all-min.js"></script> -->
+  <script src="../../scripts/commonjs/highcharts.js"></script>
+  <script src="../../scripts/commonjs/exporting.js"></script>
+  <script src="../../scripts/pagejs/taxService/taxService.js"></script>
+  <script type="text/javascript" src="/PortalWeb/scripts/pagejs/global/global.js"></script>
+</body>
+
+</html>

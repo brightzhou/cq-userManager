@@ -1,0 +1,172 @@
+body{
+  background:#f7f7f8
+}
+
+div.header {
+  color: #fff;
+}
+
+.header .header-bottom-bg {
+  background: #51a5ee;
+  height: 80px;
+  line-height: 80px;
+}
+
+.header-bottom-bg .header-bottom {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.header-bottom-bg .header-bottom h2 {
+  background: url(../../images/emblem-icon.png) no-repeat 0 4px;
+  padding-left: 60px;
+}
+
+#registerUser {
+  width: 960px;
+  margin:0 auto;
+  background: #fff;
+}
+
+#registerForm {
+  margin-top: 14px;
+  padding: 10px 0;
+}
+
+#registerUser .register-form>table {
+  margin: 0 auto;
+}
+
+#registerUser .register-form>table tr {
+  height: 40px;
+  font-size: 13px;
+  color: #333;
+}
+
+#registerUser .register-form>table tr td:first-child{
+  color: #6c6c6c;
+}
+
+#registerUser .register-form>table tr td .marked {
+  color: #999;
+  vertical-align: sub;
+}
+
+.register-form .verification-code{
+  height: 30px;
+  width: 76px;
+  vertical-align: middle;
+  background: #ECECEC;
+  color: #333;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.mini-button {
+  background: #ECECEC;
+  border: 0;
+  border-radius: 0;
+  width: 86px !important;
+  height: 32px;
+}
+
+.mini-button-text,
+#verificationCode {
+  line-height: 30px;
+}
+
+.mini-button, a.mini-button {
+  color: #333;
+}
+
+body a:hover.mini-button {
+  background: #ECECEC;
+}
+
+body a:hover.mini-button-disabled{
+  background: #F6F6F8;
+}
+
+#registerUser .btn-blue {
+  margin-top: 10px;
+  display: block;
+  width: 180px;
+  margin-left: -80px;
+  cursor: pointer;
+}
+
+.safetyStrength{
+  color: #333;
+  padding-left: 20px;
+}
+
+#registerSuccess {
+  width: 960px;
+  margin:0 auto;
+  margin-top: 20px;
+  background: #fff;
+  height: 460px;
+}
+
+.register-success-title{
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  color: #ec971f;
+}
+
+.register-success-title h1 img{
+  vertical-align: middle;
+  padding-right: 20px;
+}
+
+#corporateBindForm table tr {
+  height: 40px;
+  font-size: 14px;
+}
+
+#registerSuccess .user-info{
+  background: #f4f7f7;
+  width: 820px;
+  margin: 0 auto;
+  padding:16px 20px;
+}
+
+#registerSuccess .user-info h4{
+  height: 30px;
+  line-height: 30px;
+}
+
+#registerSuccess .user-info .user-infos{
+  margin-left: 20px;
+}
+
+#registerSuccess .user-info .user-infos tr td{
+  width: 100px;
+  color: #333;
+}
+
+#registerSuccess .user-info .user-infos tr td:first-child{
+  color: #6c6c6c;
+}
+
+#corporateBindForm{
+  font-size: 13px;
+  padding:0 70px;
+  margin-top: 20px;
+}
+
+#corporateBindForm table{
+  margin-top: 40px;
+}
+
+#corporateBindForm table tr td{
+  width: 960px;
+  text-align: center;
+}
+
+#registerSuccess .btn-blue{
+  width: 180px;
+  cursor: pointer;
+}

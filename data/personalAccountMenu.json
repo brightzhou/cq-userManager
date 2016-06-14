@@ -1,0 +1,26 @@
+[
+  { id: "user", text: "用户管理", iconCls: "cq-icon-use" },
+  { id: "userInfoMaintain", pid: "user", text: "个人信息维护", url: "./pages/taxpayerInfoMaintain/userInfoMaintain.html" },
+  { id: "corporateBind", pid: "user", text: "企业绑定", url: "./pages/corporateBind/corporateBind.html" },
+  { id: "modifyPassword", pid: "user", text: "修改密码", url: "./pages/modifyPassword/modifyPassword.html" },
+
+  { id: "right", text: "发票代开", iconCls: "cq-icon-open" },
+  { id: "addRight", pid: "right", text: "普通发票代开", url: "../tree/detailgrid.html" },
+  { id: "editRight", pid: "right", text: "增值税发票打开", url: "../buttonedit/selectGrid.html" },
+
+  { id: "three", text: "菜单三", iconCls: "cq-icon-3" },
+  { id: "three1", pid: "three", text: "菜单三", url: "../tree/detailgrid.html" },
+  { id: "three2", pid: "three", text: "菜单三", url: "../buttonedit/selectGrid.html" },
+
+  { id: "four", text: "菜单四", iconCls: "cq-icon-4" },
+  { id: "four1", pid: "four", text: "菜单四", url: "../tree/detailgrid.html" },
+  { id: "four2", pid: "four", text: "菜单四", url: "../buttonedit/selectGrid.html" },
+
+  { id: "five", text: "菜单五", iconCls: "cq-icon-5" },
+  { id: "five1", pid: "five", text: "菜单五", url: "../tree/detailgrid.html" },
+  { id: "five2", pid: "five", text: "菜单五", url: "../buttonedit/selectGrid.html" },
+
+  { id: "six", text: "菜单六", iconCls: "cq-icon-6" },
+  { id: "six1", pid: "six", text: "菜单六", url: "../tree/detailgrid.html" },
+  { id: "six2", pid: "six", text: "菜单六", url: "../buttonedit/selectGrid.html" }
+]

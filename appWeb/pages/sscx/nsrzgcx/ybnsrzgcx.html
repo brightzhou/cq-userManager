@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+<head>
+  <title>一般纳税人资格查询</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../../styles/common.css">
+  <style>
+  .title {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #35BEF4;
+  }
+  
+  .content {
+    width: 100%;
+  }
+  
+  .content-body {
+    padding: 0 20px;
+    /*min-width: 400px;*/
+  }
+  
+  .content form ul li {
+    height: 60px;
+    line-height: 60px;
+  }
+  
+  .content form ul li input {
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    padding-left: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .content form ul li input.number-check {
+    width: 58%;
+  }
+  
+  .content form ul li input.verify-input {
+    width: 28%;
+  }
+  
+  .content form ul li img {
+    height: 30px;
+    width: 28%;
+  }
+  
+  .btn-blue {
+    width: 100%;
+    height: 30px;
+    margin: 16px 0;
+  }
+  
+  .action-verifycode label {
+    padding-right: 42px;
+  }
+  /*  li {
+    margin-top: 15px;
+    margin-left: 10px;
+  }
+  
+  input {
+    height: 20px;
+    line-height: 20px;
+  }
+  
+  #numberCheck {
+    width: 61.6%;
+  }
+  
+  #verifyInput,
+  #verifyImg {
+    width: 30%;
+  }
+  
+  .action-verifycode input {
+    margin-left: 42px;
+  }
+  
+  .auto-change-verify-handle {
+    height: 30px;
+    vertical-align: middle;
+  }
+  
+  button {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 200px;
+    height: 30px;
+    border: 0px;
+    border-radius: 7px;
+    color: #ffffff;
+    background-color: #FD860E;
+  }
+  
+  p {
+    position: absolute;
+    top: 32%;
+    margin-left: 10px;
+  }*/
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <h2 class="title">一般纳税人资格查询</h2>
+    <div class="content-body">
+      <form action="/searchPage.html" method="get" id="numberForm">
+        <ul>
+          <li class="form-item action-number">
+            <label class="form-label">纳税人识别号：</label>
+            <input id="nsrsbh" class="number-check" type="text" name="nsrsbh" placeholder="纳税人识别号" vtype="required" autofocus="autofocus" />
+          </li>
+          <li class="form-item action-verifycode">
+            <label class="form-label">验证码：</label>
+            <input id="identifyCode" class="verify-input" type="text" name="identifyCode" placeholder="填写验证码" maxlength="4" autocomplete="off" />
+            <img alt="验证码" src="/captcha.jpg" onclick="this.src='/captcha.jpg?'+Math.random();" />
+          </li>
+        </ul>
+      </form>
+      <div id="button" class="btn-blue">查&nbsp&nbsp询</div>
+      <p class="info">一般纳税人资格:<span id="ybnsrzg"></span></p>
+    </div>
+  </div>
+  <script src="../../../../lib/base/jquery.min.js"></script>
+  <script src="../../../scripts/common/validate.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    $('#button').click(function() {
+      var nsrsbh = $("#nsrsbh").val();
+      var identifyCode = $('#identifyCode').val();
+      if (!nsrsbhValidate("#nsrsbh")) {
+        alert("请输入正确的纳税人识别号!");
+        return;
+      }
+      if (identifyCode.length !== 4) {
+        alert("请输入正确的四位验证码!");
+        return;
+      }
+      $.ajax({
+        url: "/api/sscx/queryNsrzg",
+        type: "post",
+        data: {
+          "nsrsbh": nsrsbh,
+          "identifyCode": identifyCode
+        },
+        success: function(data) {
+          if (!data.success) {
+            if (data.messageCode === "80480804") {
+              alert("验证码输入错误!");
+              return;
+            }
+            alert("查询失败!");
+            return;
+          }
+          if (data.data.length == 0) {
+          	alert("没有查询到数据!");
+            return;
+          }
+          if (data.data[0].ybnsrzg) {
+            $('#ybnsrzg').text("是");
+          } else {
+            $('#ybnsrzg').text("否");
+          }
+        },
+        error: function(text) {
+          alert("查询！请求失败，请稍后再试!");
+        }
+      });
+    });
+  });
+  </script>
+</body>
+</html>

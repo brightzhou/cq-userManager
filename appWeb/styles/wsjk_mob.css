@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* CSS Document */
+body {margin:0;padding:0;font-size:12px;color:#666;font-family: 'Microsoft Yahei', Arial, Simsun, sans-serif !important;background:#efefef;position:relative; height:auto;}
+img {border:0;display:block;}
+h3 h4 {margin:0;padding:0;}
+ul {margin:0;padding:0;list-style:none;display:inline;_display:block;+display:block;}
+a {color:#666;text-decoration:none; outline:0 none;}
+a:hover {color:#286ca6; text-decoration:none;}
+.clear {clear:both;} 
+.font14 {font-size:12px;}
+.zindex999 {z-index:88;position:absolute;}
+.f_left {float:left;}
+.f_right {float:right;}
+
+.wrap {width:96%;height:auto;display:block;margin:10px auto;}
+.table_info th{width:40%;height:30px;text-align:left;font-size:14px;}
+.table_info th span {padding-left:10px;}
+.table_info td{text-align:left;font-size:14px;font-weight:bold;color:#000;}
+
+.table_con {margin-top:10px;}
+.table_con th {height:30px;text-align:center;font-size:12px;background:#ddd;}
+.table_con td{height:60px;text-align:center;font-size:12px;background:#fff;}
+.table_con td.dbc {background:#dff1ff;}
+
+.button {
+  background: #2b98ec;
+  font-size: 1.2em;
+  margin-top: 1em;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  line-height: 40px;
+  color: #fff;
+  text-align: center;
+}
+
+
+
+

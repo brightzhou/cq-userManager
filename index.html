@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>重庆电子税务局</title>
+  <link href="/PortalWeb/lib/sui/themes/default/miniui.css" rel="stylesheet" />
+  <link href="/PortalWeb/lib/sui/themes/icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/PortalWeb/styles/override-miniui.css">
+  <link rel="stylesheet" href="/PortalWeb/styles/common.css">
+  <link rel="stylesheet" href="/PortalWeb/styles/cq-framework.css">
+</head>
+<body>
+  <div id="layoutTaxOffice" class="mini-layout">
+    <div class="header" region="north" showSplit="false" showHeader="false" height="160">
+      <img src="/PortalWeb/images/potal/16.png" class="header-bg" alt="header picture">
+      <div class="title-tax">
+        <div>
+          <h1>重庆市电子税务局</h1>
+          <h3>CHONGQI ONLINE TAX BUREAU</h3>
+        </div>
+        <p>服务热线： 023-12366</p>
+      </div>
+      <div class="tool-wrap">
+        <div id="welcomeNotice" class="welcome-notice">
+          <span></span>，欢迎您！
+        </div>
+        <div class="noticeInfo">本月征期截止至</div>
+        <div class="noticeDate">2016-4-25</div>
+        <div class="separation-line"></div>
+        <div class="manage-area">
+          <img src="/PortalWeb/images/potal/67.png" />地税业务办理区 <a href="javascript:switchTaxpayer()">[身份切换]</a> <a href="javascript:logout()">[退出]</a>
+        </div>
+      </div>
+    </div>
+    <div showHeader="false" class="remove-margin" region="west" width="260" maxWidth="250" minWidth="100" style="border: 1px solid #dadada;">
+      <div id="miniOutlookmenu" class="mini-outlookmenu" onitemselect="onItemSelect" onitemclick="onItemClick" idField="id" parentField="pid" textField="menuName" borderStyle="border:0" style="height:auto">
+      </div>
+    </div>
+    <div title="center" class="remove-margin" region="center" bodyStyle="overflow:hidden;" style="margin-top:-32px;margin-top:-24px\9">
+      <iframe id="mainframe" frameborder="0" name="main" style="width:100%;height:100%;" border="0"> </iframe>
+    </div>
+  </div>
+  <div class="management-area">国税业务办理区</div>
+  <div class="taxpayer-list" id="taxpayerList">
+    <ul></ul>
+  </div>
+  <div id="editWindow" class="mini-window" title="办税身份选择" style="width:500px;" showModal="true" allowDrag="false">
+    <div class="switch-taxpayer">
+      <p>请选择身份</p>
+      <ul id="taxpayerListInfo">
+      </ul>
+      <div class="btn-blue" onclick="enterTaxpayerIdentity()">点击进入</div>
+    </div>
+  </div>
+  <script src="/PortalWeb/lib/base/jquery.min.js"></script>
+  <script src="/PortalWeb/lib/sui/mini-all-min.js"></script>
+  <script src="/PortalWeb/scripts/commonjs/loading.js"></script>
+  <script type="text/javascript" src="/PortalWeb/scripts/pagejs/indexFramework/init.js"></script>
+  <script type="text/javascript">
+  function logout() {
+		$.ajax({
+			url : "http://10.116.100.237:7001/ssoserver/logout",
+			type : 'post',
+			dataType : 'JSONP'/* ,
+			jsonp: "callbackparam",//传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)
+			jsonpCallback:"success_jsonpCallback",//自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名
+			success : function(data){
+				window.location = "/api/yhgl/index";
+			} */
+		});
+		
+		var load = new Loading();
+	    load.init();
+	    load.start();
+	    setTimeout(function() {
+	      load.stop();
+	      window.location.reload();
+	    }, 2000);
+	};
+	  
+	$(document).ajaxComplete(function(evt, request, settings) {
+		var result = mini.decode(request.responseText);
+		if (result.message == "ajaxSessionTimeOut") {
+			mini.alert("登录超时，请重新登录。", "提示信息", function() {
+				window.location.reload();
+			});
+		}
+	});
+  </script>
+</body>
+</html>

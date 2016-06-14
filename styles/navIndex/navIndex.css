@@ -1,0 +1,141 @@
+.body-wrap {
+  width: 100%;
+}
+
+/*body-right*/
+.body-wrap .body-right {
+    width: 88%;
+    margin-top: 20px;
+    margin-left: 17px;
+}
+
+.right-upper {
+    height: 35%;
+    background-color: #ffffff;
+}
+
+.upper-title {
+    height: 40px;
+    line-height: 40px;
+    background-color: #E2E7E8;
+}
+
+.upper-title > span {
+  display: block;
+  width: 150px;
+  margin-top: -2px;
+  font-size: 16px;
+  text-align: center;
+  border-top: 2px solid #39ade5;
+  background-color: #ffffff;
+}
+
+.body-right ul.upper-content {
+    list-style: none;
+    width: 100%;
+    margin-top: 15px;
+    margin-left: 15px;
+    padding: 0;
+}
+
+.body-right .upper-content li {
+  float: left;
+  width: 12%;
+  height: 80px;
+  cursor: pointer;
+}
+
+.invoice-flow {
+    background: url("../../images/potal/blue.png") no-repeat center center;
+}
+
+.invoice-information {
+    background: url("../../images/potal/green.png") no-repeat center center;
+}
+
+.taxpayer-status {
+    background: url("../../images/potal/red.png") no-repeat center center;
+}
+
+.owe-tax-status {
+    background: url("../../images/potal/orange.png") no-repeat center center;
+}
+
+.credit-grade {
+    background: url("../../images/potal/green.png") no-repeat center center;
+}
+
+.tax-consult {
+    background: url("../../images/potal/red.png") no-repeat center center;
+}
+
+.tax-navigation {
+    background: url("../../images/potal/blue.png") no-repeat center center;
+}
+
+.taxpayer-school {
+    background: url("../../images/potal/orange.png") no-repeat center center;
+}
+
+.upper-content li > img {
+  position: relative;
+  top: 15px;
+  left: 38%;
+}
+
+.upper-content li > p {
+  color: #ffffff;
+  font-size: 14px;
+  padding-top: 14px;
+  text-align: center;
+}
+
+/*body-right*/
+.body-right .right-lower{
+    height: 60%;
+    margin-top: 100px;
+    background-color: #ffffff;
+}
+
+.right-lower .lower-title {
+    height: 40px;
+    line-height: 40px;
+    background-color: #E2E7E8;
+}
+
+.right-lower .lower-title > span {
+  display: block;
+  width: 150px;
+  margin-top: -2px;
+  font-size: 16px;
+  text-align: center;
+  border-top: 2px solid #ec6868;
+  background-color: #ffffff;
+}
+
+
+/*invoice flow search*/
+
+.searchForm {
+  margin: 20px auto;
+  font-size: 13px;
+}
+
+.searchForm tr td img{
+  height: 30px;
+}
+
+.searchForm tr td {
+  padding: 0 6px;
+}
+
+.btn-search {
+  padding-left: 24px;
+  font-size: 14px;
+  padding-right: 10px;
+}
+
+.search img {
+  vertical-align: middle;
+  height: 30px;
+}

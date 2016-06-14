@@ -1,0 +1,86 @@
+.nav-service {
+  overflow: hidden;
+}
+
+.nav-service h3 {
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid #efefef;
+  padding-left: 30px;
+}
+
+.nav-service ul {
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+.nav-service ul li {
+  float: left;
+  width: 20%;
+  height: 100px;
+  display: inline;
+  text-align: center;
+}
+
+.nav-service ul li a {
+  display: inline-block;
+}
+
+.nav-service ul li a span {
+  display: block;
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+  margin:0 auto;
+}
+
+.nav-service ul li a em {
+  font-style: normal;
+  font-size: 14px;
+}
+
+.content{
+	overflow: hidden;
+}
+
+.content .chart-data{
+	width: 70%;
+	height: 360px;
+	background-color: #F1F5F9;
+	margin-right: 5%;
+}
+
+.content .count-data{
+	background-color: #F1F5F9;
+	width: 22%;
+	height: 360px;
+}
+
+.content .count-data .total{
+	height: 120px;
+	border-bottom: 1px solid #e7e7e7;
+	padding-top: 60px;
+}
+
+.content .count-data .total div{
+	padding-top: 50px;
+}
+
+.content .count-data .total p{
+	text-align: center;
+}
+
+.content .count-data .total .number{
+	font-size: 24px;
+	color: #4a89dc;
+}
+
+.content .count-data .total .words{
+	font-size: 13px;
+	color: #777;
+}
+
+/*.content .chart-data{
+	margin-left: 30px;
+}*/
+

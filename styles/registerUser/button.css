@@ -1,0 +1,29 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+.mini-button{}
+.font12{ font-size:12px!important;}
+.font14{ font-size:14px!important;}
+.font16{ font-size:16px!important;}
+.font18{ font-size:18px!important;}
+
+.orange{ background:#ffb44c!important; border:none!important; color:#fff!important; padding:2px 10px!important;}
+.orange:hover{ background:#fe9f1b!important;}
+
+.blue{ background:#39ace5!important; border:none!important; color:#fff!important;font-size: 16px;padding: 7px 30px !important; }
+.blue:hover{ background:#39CDE2!important;}
+
+.gray{ background:#8dadc4!important; border:none!important; color:#fff!important;}
+.gray:hover{ background:#709ab9!important;}
+
+
+.green{ background:#86b558!important; border:none!important; color:#fff!important;}
+.green:hover{ background:#6c9742!important;}
+
+
+.red{ background:#d3433c!important; border:none!important; color:#fff!important;}
+.red:hover{ background:#b42c26!important;}
+
+

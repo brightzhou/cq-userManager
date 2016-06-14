@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>电子税务局用户注册</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link href="../../lib/sui/themes/default/miniui.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="../../styles/common.css">
+  <link rel="stylesheet" href="../../styles/override-miniui.css">
+  <link rel="stylesheet" href="../../styles/registerUser/register.css">
+</head>
+
+<body>
+  <div class="header">
+    <div class="header-bottom-bg">
+      <div class="header-bottom">
+        <h2>我的电子税务局</h2>
+      </div>
+    </div>
+  </div>
+  <!-- <div title="center" class="" region="center" bodyStyle="overflow:hidden;">
+    <iframe id="mainframe" frameborder="0" name="main" style="width:100%;height:560px;" border="0">
+    </iframe>
+  </div> -->
+  <div id="content">
+    <div id="registerUser">
+      <div id="registerForm" class="register-form">
+        <table>
+          <tr>
+            <td width="80">
+              <label for="username">用户名</label>
+            </td>
+            <td>
+              <input id="username" name="username" vtype="required;username;maxLength:32" class="mini-textbox" requiredErrorText="用户名不能为空" onvalidation="onUserNameValidation" style="width: 240px;" />
+              <i>*</i>
+            </td>
+            <td id="username_error" class="validation-error-text"></td>
+          </tr>
+          <tr>
+            <td>
+              <label for="password">输入密码</label>
+            </td>
+            <td>
+              <input id="password" name="password" class="mini-password" vtype="required;englishAndNum" onkeyup="checkComplex" onvalidation="onPwdValidation" style="width: 240px;" />
+              <i>*</i>
+            </td>
+            <td id="password_error" class="validation-error-text"></td>
+          </tr>
+          <tr>
+            <td>
+              <label for="confirmpassword">确认密码</label>
+            </td>
+            <td>
+              <input id="confirmpassword" class="mini-password" vtype="required;differ" onvalidation="confirmPasswordValidation" style="width: 240px;" />
+              <i>*</i>
+            </td>
+            <td id="confirmpassword_error" class="validation-error-text"></td>
+          </tr>
+          <tr>
+            <td>
+              <label for="xm">姓名</label>
+            </td>
+            <td>
+              <input id="xm" name="xm" class="mini-textbox" vtype="required;maxLength:20" style="width: 240px;" onvalidation="onNameValidation" />
+              <i>*</i>
+            </td>
+            <td id="xm_error" class="validation-error-text"></td>
+          </tr>
+          <tr>
+          <td>
+           	 性别
+          </td>
+          <td>
+            <input name="sex" id="sex" class="mini-radiobuttonlist" repeatDirection="" repeatLayout="table" data="[{id:'m',text:'男'},{id:'f',text:'女'}]" valueField="id" value="m"></input>
+          </td>
+        </tr>
+          <tr>
+            <td>
+              <label for="yhkh">银行卡号</label>
+            </td>
+            <td>
+              <input id="yhkh" name="yhkh" class="mini-textbox" vtype="bankNum;int;required" style="width: 240px;" />
+              <i>*</i>
+            </td>
+            <td id="yhkh_error" class="validation-error-text"><span class="marked">（必须与姓名一致的银行卡号）</span></td>
+          </tr>
+          <tr>
+            <td>
+              <label for="uploadPath">身份证上传</label>
+            </td>
+            <!-- <td>
+            <input id="uploadPath" class="mini-fileupload" name="uploadPath" limitType="*.jpg;*.png" flashUrl="../../lib/swfupload/Flash/swfupload.swf" uploadUrl="../../../api/yhgl/uploadFile" limitSize="1024 KB" onuploadsuccess="onUploadSuccess" usequerystring="true" onuploaderror="onUploadError" updateFileName="flash_player.rar" style="width:160px"/>
+            <input value="上传" class="verification-code" type="button" onclick="startUpload()" />
+            <i>*</i>
+          </td> -->
+            <td>
+              <input id="uploadPath" name="uploadPath" class="mini-hidden" allowInput="false" style="float:left;width:180px" />
+              <div id="appUploadOuter" style="float:left;background: #ECECEC">
+                <span id="appUploadButton"></span>
+              </div>
+              <div style="float:left">&nbsp;<span style="background: white;" id="tsxx"></span></div>
+              <!-- <i>*</i> -->
+            </td>
+            <td id="uploadPath_error" class="validation-error-text">
+              <span class="marked">（此处为可选上传身份证复印件等）</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="sfzhm">身份证号</label>
+            </td>
+            <td>
+              <input id="sfzhm" name="sfzhm" class="mini-textbox" vtype="required;idCard" style="width: 240px;" onvalidation="onIdCardNumberValidation" />
+              <i>*</i>
+            </td>
+            <td id="sfzhm_error" class="validation-error-text"></td>
+          </tr>
+          <tr>
+            <td>
+              <label for="mobile">手机号码</label>
+            </td>
+            <td>
+              <input id="mobile" name="mobile" class="mini-textbox" vtype="required;int;telNum" style="width: 240px;" onvalidation="telNumberValidation" />
+              <i>*</i>
+            </td>
+            <td id="mobile_error" class="validation-error-text"></td>
+          </tr>
+          <tr>
+            <td>
+              <label for="code">验证码</label>
+            </td>
+            <td>
+              <input id="code" name="code" class="mini-textbox" vtype="required" style="width: 150px;" onvalidation="codeValidation" />
+              <a id="verificationCode" class="mini-button" type="button" onclick="getVerificationCode">获取验证码</a>
+              <i>*</i>
+            </td>
+            <td id="code_error" class="validation-error-text"></td>
+          </tr>
+          <tr>
+            <td>
+              <label for="email">邮箱地址</label>
+            </td>
+            <td>
+              <input id="email" name="email" class="mini-textbox" vtype="email;maxLength:30" style="width: 240px;" />
+            </td>
+            <td id="email_error" class="validation-error-text"><span class="marked"></span></td>
+          </tr>
+          <tr>
+            <td>
+              <label for="wxzh">微信号</label>
+            </td>
+            <td>
+              <input id="wxzh" name="wxzh" class="mini-textbox" style="width: 240px;" onvalidation="wechatNumValidation" vtype="maxLength:32" />
+            </td>
+            <td id="wxzh_error" class="validation-error-text"></td>
+          </tr>
+          <tr>
+            <td>
+              <label for="address">地址</label>
+            </td>
+            <td>
+              <input id="address" name="address" class="mini-textbox" vtype="maxLength:150" style="width: 240px;" onvalidation="addressValidation" />
+            </td>
+            <td id="address_error" class="validation-error-text"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>
+              <a href="javascript:void(0)" class="btn-blue" type="button" onclick="submitRegisterForm()">立即注册</a>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="../../lib/base/jquery.min.js" type="text/javascript"></script>
+  <script src="../../lib/sui/mini-all-min.js" type="text/javascript"></script>
+  <script src="../../scripts/commonjs/validate.js"></script>
+  <script src="../../scripts/pagejs/registerUser/registerUser.js"></script>
+  <script src="../../scripts/swfupload/swfupload.js" type="text/javascript"></script>
+  <script src="../../scripts/swfupload/plugins/swfupload.queue.js" type="text/javascript"></script>
+  <script src="../../scripts/pagejs/registerUser/queueUpload.js" type="text/javascript"></script>
+</body>
+
+</html>

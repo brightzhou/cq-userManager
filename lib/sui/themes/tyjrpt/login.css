@@ -1,0 +1,9 @@
+.mian_area { background:url(images/login/mian_areabg.png) no-repeat center center ; height:460px;}
+.login_main { width:480px; height:460px; position:absolute; top:50%; left:50%; margin-left:-240px; margin-top:-230px;text-align:center;}
+.login_logo { background:url(images/login/login_logo.png) no-repeat; height:101px; margin-left:30px; }
+.nbg { background:none; border:0px; color:#fff;}
+.login_area { background:url(images/login/login_area.png) no-repeat; height:205px; margin-top:10px; padding-top:120px; text-align:left; padding-left:150px;}
+.input_text { border:0px ; margin-left:25px; height:28px; line-height:28px; width:170px;}
+.mt20 { margin-top:26px;}
+.login_but { margin-top:40px;}
+.login_b { background:url(images/login/login_b.png) no-repeat; height:42px; width:163px; border:0px; cursor:pointer; display:block;}
