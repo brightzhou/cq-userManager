@@ -1,0 +1,25 @@
+a.menu-1 {
+  display: block;
+  padding-left: 18px;
+  margin: 0 20px;
+  height: 38px;
+  line-height: 38px;
+  color: #666;
+  border-bottom: 1px solid #e1e1e1;
+  background: url(../../images/zhzx/arrow01.png) 0 15px no-repeat;
+}
+
+a.menu-2 {
+  display: block;
+  padding-left: 38px;
+  margin: 0 20px;
+  height: 32px;
+  line-height: 32px;
+  color: #666;
+  background: url(../../images/zhzx/dot01.png) 20px 15px no-repeat;
+}
+
+a.menu-1:hover,
+a.menu-2:hover {
+  color: #006cda;
+}
